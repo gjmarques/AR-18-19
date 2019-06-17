@@ -1,9 +1,1 @@
-# This the configuration for GUEST_E2
-#
-# Uncomment the following line to enable DHCP
-# dhcp
-# or the line below to manually setup an IP address and subnet mask
-# ip 192.168.1.1 255.0.0.0
-#
-
-set pcname GUEST_E2
+ip 101.32.0.3 101.32.0.1 24

@@ -1,12 +1,43 @@
 --------AVEIRO
 ------A_R1
+--INT_F0/0
+int f0/0
+ip add 101.1.0.1 255.255.255.252
+no shut
+ip ospf 1 area 0
+
+--INT_F1/0
+int f1/0
+ip add 101.1.1.1 255.255.255.252
+no shut
+ip ospf 1 area 0
+
+--OSPF_1
+router ospf 1
+router-id 1.1.1.1
 
 ------A_R2
+--INT_F0/0
+int f0/0
+ip add 101.1.0.2 255.255.255.252
+no shut
+ip ospf 1 area 0
+
+--INT_F1/0
+int f1/0
+ip add 101.1.2.1 255.255.255.252
+no shut
+ip ospf 1 area 0
+
+--OSPF_1
+router ospf 1
+router-id 2.2.2.2
 
 ------A_ESW1
+ip routing
 int range f1/2 - 4
 switchport mode trunk
-switchport trunk allowed vlan 1,2,1002-1005
+switchport trunk allowed vlan 1,2,8,1002-1005
 
 ----VLAN_ESW1
 vlan database
@@ -15,15 +46,36 @@ vlan 2
 vlan 8
 exit
 
+--INT_F1/0
+int f1/0
+no switchport
+ip add 101.1.1.2 255.255.255.252
+no shut
+ip ospf 1 area 0
+
+--INT_F1/1
+int f1/1
+no switchport
+ip add 101.1.2.2 255.255.255.252
+no shut
+ip ospf 1 area 0
+
 --ADMIN
 int vlan 2
-ip address 101.2.0.3 255.255.255.0
+ip address 101.2.0.1 255.255.255.0
 no autostate
+ip ospf 1 area 0
 
 --PUBLIC_DATACENTER
 int vlan 8
 ip address 101.8.0.1 255.255.255.0
 no autostate
+ip ospf 1 area 0
+
+--OSPF_1
+router ospf 1
+redistribute ospf 1 subnets
+router-id 3.3.3.3
 
 ------A_E1------
 int range f1/0 - 1
@@ -40,18 +92,23 @@ exit
 
 --ADMIN
 int vlan 2
-ip address 101.2.0.1 255.255.255.0
+ip address 101.2.0.2 255.255.255.0
 no autostate
+ip ospf 1 area 0
 
 --WORKER_E1
 int vlan 31
 ip address 101.3.1.1 255.255.255.0
 no autostate
+ip ospf 1 area 0
 
 --GUEST_E1
 int vlan 41
 ip address 101.4.1.1 255.255.255.0
 no autostate
+ip ospf 1 area 0
+
+--
 
 ------A_E2------
 int range f1/0 - 1
@@ -68,7 +125,7 @@ exit
 
 --ADMIN
 int vlan 2
-ip address 101.2.0.2 255.255.255.0
+ip address 101.2.0.3 255.255.255.0
 no autostate
 
 --WORKER_E2

@@ -1,0 +1,18 @@
+Jun 17 18:59:28.588 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jun 17 18:59:28.589 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 49557.
+Jun 17 18:59:29.062 HYPERVISOR: exec_cmd: hypervisor version 
+Jun 17 18:59:29.062 HYPERVISOR: exec_cmd: hypervisor working_dir D:\AR\AR-18-19\ar-1819\project-files\dynamips 
+Jun 17 18:59:29.063 GENERAL: working_dir=D:\AR\AR-18-19\ar-1819\project-files\dynamips
+Jun 17 18:59:29.063 HYPERVISOR: exec_cmd: ethsw create Ethernetswitch-1 
+Jun 17 21:00:59.998 HYPERVISOR: exec_cmd: nio create_udp udp-161eb071-ecdc-43c5-80d5-c241adaba7b5 10081 127.0.0.1 10080 
+Jun 17 21:00:59.999 HYPERVISOR: exec_cmd: ethsw add_nio Ethernetswitch-1 udp-161eb071-ecdc-43c5-80d5-c241adaba7b5 
+Jun 17 21:01:00.018 HYPERVISOR: exec_cmd: ethsw set_access_port Ethernetswitch-1 udp-161eb071-ecdc-43c5-80d5-c241adaba7b5 1 
+Jun 17 21:01:05.570 HYPERVISOR: exec_cmd: nio create_udp udp-aed4a0d7-e1e8-4725-bf68-c2575fb99a9f 10082 127.0.0.1 10083 
+Jun 17 21:01:05.571 HYPERVISOR: exec_cmd: ethsw add_nio Ethernetswitch-1 udp-aed4a0d7-e1e8-4725-bf68-c2575fb99a9f 
+Jun 17 21:01:05.587 HYPERVISOR: exec_cmd: ethsw set_access_port Ethernetswitch-1 udp-aed4a0d7-e1e8-4725-bf68-c2575fb99a9f 1 
+Jun 17 21:01:24.360 HYPERVISOR: exec_cmd: ethsw set_dot1q_port Ethernetswitch-1 udp-aed4a0d7-e1e8-4725-bf68-c2575fb99a9f 1 
+Jun 17 21:01:24.360 HYPERVISOR: exec_cmd: ethsw set_access_port Ethernetswitch-1 udp-161eb071-ecdc-43c5-80d5-c241adaba7b5 8 
+Jun 17 21:05:27.334 HYPERVISOR: exec_cmd: ethsw delete Ethernetswitch-1 
+Jun 17 21:05:27.364 HYPERVISOR: exec_cmd: hypervisor stop 
+Jun 17 21:05:27.719 HYPERVISOR: Stopped.
+Jun 17 21:05:27.719 GENERAL: reset done.
