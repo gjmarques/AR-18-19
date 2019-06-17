@@ -63,7 +63,7 @@ ip ospf 1 area 0
 --ADMIN
 int vlan 2
 ip address 101.2.0.1 255.255.255.0
-no autostate
+no autostate    
 ip ospf 1 area 0
 
 --PUBLIC_DATACENTER
@@ -78,6 +78,7 @@ redistribute ospf 1 subnets
 router-id 3.3.3.3
 
 ------A_E1------
+ip routing
 int range f1/0 - 1
 switchport mode trunk
 switchport trunk allowed vlan 1,2,1002-1005 
@@ -108,9 +109,13 @@ ip address 101.4.1.1 255.255.255.0
 no autostate
 ip ospf 1 area 0
 
+router ospf 1
+redistribute ospf 1 subnets
+router-id 4.4.4.4
 --
 
 ------A_E2------
+ip routing
 int range f1/0 - 1
 switchport mode trunk
 switchport trunk allowed vlan 1,2,1002-1005 
@@ -127,19 +132,27 @@ exit
 int vlan 2
 ip address 101.2.0.3 255.255.255.0
 no autostate
+ip ospf 1 area 0
+ip helper-address 101.8.0.3
 
 --WORKER_E2
 int vlan 32
 ip address 101.3.2.1 255.255.255.0
 no autostate
+ip ospf 1 area 0
+ip helper-address 101.8.0.3
 
 --GUEST_E2
 int vlan 42
 ip address 101.4.2.1 255.255.255.0
 no autostate
+ip ospf 1 area 0
+ip helper-address 101.8.0.3
 
 
-
+router ospf 1
+redistribute ospf 1 subnets
+router-id 5.5.5.5
 
 
 --SNAT CONFIGURATION
