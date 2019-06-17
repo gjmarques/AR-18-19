@@ -1,0 +1,51 @@
+Jun 17 13:05:20.423 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jun 17 13:05:20.425 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 59560.
+Jun 17 13:05:20.903 HYPERVISOR: exec_cmd: hypervisor version 
+Jun 17 13:05:20.903 HYPERVISOR: exec_cmd: hypervisor working_dir D:\AR\AR-18-19\ar-1819\project-files\dynamips 
+Jun 17 13:05:20.903 GENERAL: working_dir=D:\AR\AR-18-19\ar-1819\project-files\dynamips
+Jun 17 13:05:20.904 HYPERVISOR: exec_cmd: hypervisor working_dir D:\AR\AR-18-19\ar-1819\project-files\dynamips\0ec42fbd-ac8b-406c-ab24-40c2c7a11c74 
+Jun 17 13:05:20.904 GENERAL: working_dir=D:\AR\AR-18-19\ar-1819\project-files\dynamips\0ec42fbd-ac8b-406c-ab24-40c2c7a11c74
+Jun 17 13:05:20.905 HYPERVISOR: exec_cmd: vm create A_E22 15 c3725 
+Jun 17 13:05:20.906 VM: VM A_E22 created.
+Jun 17 13:05:20.907 HYPERVISOR: exec_cmd: vm set_con_tcp_port A_E22 5019 
+Jun 17 13:05:20.907 HYPERVISOR: exec_cmd: c3725 get_mac_addr A_E22 
+Jun 17 13:05:20.908 HYPERVISOR: exec_cmd: vm set_disk0 A_E22 1 
+Jun 17 13:05:20.908 HYPERVISOR: exec_cmd: vm set_exec_area A_E22 64 
+Jun 17 13:05:20.909 HYPERVISOR: exec_cmd: vm get_status A_E22 
+Jun 17 13:05:20.909 HYPERVISOR: exec_cmd: vm set_idle_pc A_E22 0x60a6a1e0 
+Jun 17 13:05:20.910 HYPERVISOR: exec_cmd: vm set_ios A_E22 C:/Users/Goncalo Marques/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Jun 17 13:05:20.911 HYPERVISOR: exec_cmd: c3725 set_mac_addr A_E22 c20f.0bf8.0000 
+Jun 17 13:05:20.911 HYPERVISOR: exec_cmd: vm set_nvram A_E22 256 
+Jun 17 13:05:20.912 HYPERVISOR: exec_cmd: vm get_status A_E22 
+Jun 17 13:05:20.912 HYPERVISOR: exec_cmd: vm slot_add_binding A_E22 1 0 NM-16ESW 
+Jun 17 13:05:30.230 HYPERVISOR: exec_cmd: nio create_udp udp-1d8b7394-a529-4ce1-8632-163720bd1f5a 10070 127.0.0.1 10071 
+Jun 17 13:05:30.778 HYPERVISOR: exec_cmd: vm slot_add_nio_binding A_E22 0 0 udp-1d8b7394-a529-4ce1-8632-163720bd1f5a 
+Jun 17 13:05:30.778 HYPERVISOR: exec_cmd: vm get_status A_E22 
+Jun 17 13:05:32.242 HYPERVISOR: exec_cmd: nio create_udp udp-fb35ddaa-cdff-480f-a526-1c227d7b1bc8 10136 127.0.0.1 10137 
+Jun 17 13:05:32.245 HYPERVISOR: exec_cmd: vm slot_add_nio_binding A_E22 0 1 udp-fb35ddaa-cdff-480f-a526-1c227d7b1bc8 
+Jun 17 13:05:32.245 HYPERVISOR: exec_cmd: vm get_status A_E22 
+Jun 17 13:05:32.377 HYPERVISOR: exec_cmd: nio create_udp udp-b3ef4e4a-98f1-4115-88bc-a71694841cbb 10142 127.0.0.1 10143 
+Jun 17 13:05:32.380 HYPERVISOR: exec_cmd: vm slot_add_nio_binding A_E22 1 0 udp-b3ef4e4a-98f1-4115-88bc-a71694841cbb 
+Jun 17 13:05:32.380 HYPERVISOR: exec_cmd: vm get_status A_E22 
+Jun 17 13:05:32.627 HYPERVISOR: exec_cmd: nio create_udp udp-8df28646-b6be-4900-8ca5-6ffcf3689c8d 10150 127.0.0.1 10151 
+Jun 17 13:05:32.630 HYPERVISOR: exec_cmd: vm slot_add_nio_binding A_E22 1 1 udp-8df28646-b6be-4900-8ca5-6ffcf3689c8d 
+Jun 17 13:05:32.630 HYPERVISOR: exec_cmd: vm get_status A_E22 
+Jun 17 13:11:33.269 HYPERVISOR: exec_cmd: vm get_status A_E22 
+Jun 17 13:11:33.270 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding A_E22 1 1 
+Jun 17 13:11:33.271 HYPERVISOR: exec_cmd: nio delete udp-8df28646-b6be-4900-8ca5-6ffcf3689c8d 
+Jun 17 13:11:46.641 HYPERVISOR: exec_cmd: vm get_status A_E22 
+Jun 17 13:11:46.641 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding A_E22 0 0 
+Jun 17 13:11:46.643 HYPERVISOR: exec_cmd: nio delete udp-1d8b7394-a529-4ce1-8632-163720bd1f5a 
+Jun 17 13:11:46.757 HYPERVISOR: exec_cmd: vm get_status A_E22 
+Jun 17 13:11:46.758 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding A_E22 0 1 
+Jun 17 13:11:46.759 HYPERVISOR: exec_cmd: nio delete udp-fb35ddaa-cdff-480f-a526-1c227d7b1bc8 
+Jun 17 13:11:46.870 HYPERVISOR: exec_cmd: vm get_status A_E22 
+Jun 17 13:11:46.870 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding A_E22 1 0 
+Jun 17 13:11:46.871 HYPERVISOR: exec_cmd: nio delete udp-b3ef4e4a-98f1-4115-88bc-a71694841cbb 
+Jun 17 13:11:47.191 HYPERVISOR: exec_cmd: vm get_status A_E22 
+Jun 17 13:11:47.192 HYPERVISOR: exec_cmd: vm extract_config A_E22 
+Jun 17 13:11:47.193 HYPERVISOR: exec_cmd: vm delete A_E22 
+Jun 17 13:11:47.194 VM: VM A_E22 destroyed.
+Jun 17 13:11:47.203 HYPERVISOR: exec_cmd: hypervisor stop 
+Jun 17 13:11:47.284 HYPERVISOR: Stopped.
+Jun 17 13:11:47.284 GENERAL: reset done.

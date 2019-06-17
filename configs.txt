@@ -1,0 +1,72 @@
+--------AVEIRO
+
+------A_ESW1
+int range f 1/0-3
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 1002-1005
+
+----VLAN_ESW1
+vlan database
+vlan 1
+vlan 2
+
+--ADMIN
+int vlan 2
+ip address 101.2.0.1 255.255.255.0
+no autostate
+
+------A_E1
+int range f 0/0-1
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 1002-1005 
+
+----VLANS_E1
+vlan database
+vlan 1
+vlan 2
+vlan 3
+vlan 4
+
+--ADMIN
+int vlan 2
+ip address 101.2.0.1 255.255.255.0
+no autostate
+
+--WORKER_E1
+int vlan 3
+ip address 101.3.1.1 255.255.255.0
+no autostate
+
+--GUEST_E1
+int vlan 4
+ip address 101.4.1.1 255.255.255.0
+no autostate
+
+------A_E2
+int range f 0/0-1
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 1002-1005 
+
+----VLANS_E2
+vlan database
+vlan 1
+vlan 2
+vlan 3
+vlan 4
+
+--ADMIN
+int vlan 2
+ip address 101.2.0.1 255.255.255.0
+no autostate
+
+--WORKER_E2
+int vlan 3
+ip address 101.3.2.1 255.255.255.0
+no autostate
+
+--GUEST_E2
+int vlan 4
+ip address 101.4.2.1 255.255.255.0
+no autostate
+
+------
