@@ -1,31 +1,42 @@
 --------AVEIRO
+------A_R1
+
+------A_R2
 
 ------A_ESW1
-int range f 1/0-3
+int range f1/2 - 4
 switchport mode trunk
-switchport trunk allowed vlan 1, 2, 1002-1005
+switchport trunk allowed vlan 1,2,1002-1005
 
 ----VLAN_ESW1
 vlan database
 vlan 1
 vlan 2
+vlan 8
+exit
 
 --ADMIN
 int vlan 2
-ip address 101.2.0.1 255.255.255.0
+ip address 101.2.0.3 255.255.255.0
 no autostate
 
-------A_E1
-int range f 0/0-1
+--PUBLIC_DATACENTER
+int vlan 8
+ip address 101.8.0.1 255.255.255.0
+no autostate
+
+------A_E1------
+int range f1/0 - 1
 switchport mode trunk
-switchport trunk allowed vlan 1, 2, 1002-1005 
+switchport trunk allowed vlan 1,2,1002-1005 
 
 ----VLANS_E1
 vlan database
 vlan 1
 vlan 2
-vlan 3
-vlan 4
+vlan 31
+vlan 41
+exit
 
 --ADMIN
 int vlan 2
@@ -33,39 +44,40 @@ ip address 101.2.0.1 255.255.255.0
 no autostate
 
 --WORKER_E1
-int vlan 3
-ip address 101.3.1.1 255.25.255.0
+int vlan 31
+ip address 101.3.1.1 255.255.255.0
 no autostate
 
 --GUEST_E1
-int vlan 4
+int vlan 41
 ip address 101.4.1.1 255.255.255.0
 no autostate
 
-------A_E2
-int range f 0/0-1
+------A_E2------
+int range f1/0 - 1
 switchport mode trunk
-switchport trunk allowed vlan 1, 2, 1002-1005 
+switchport trunk allowed vlan 1,2,1002-1005 
 
 ----VLANS_E2
 vlan database
 vlan 1
 vlan 2
-vlan 3
-vlan 4
+vlan 32
+vlan 42
+exit
 
 --ADMIN
 int vlan 2
-ip address 101.2.0.1 255.255.255.0
+ip address 101.2.0.2 255.255.255.0
 no autostate
 
 --WORKER_E2
-int vlan 3
+int vlan 32
 ip address 101.3.2.1 255.255.255.0
 no autostate
 
 --GUEST_E2
-int vlan 4
+int vlan 42
 ip address 101.4.2.1 255.255.255.0
 no autostate
 
@@ -106,3 +118,4 @@ no autostate
 
 
 
+no autostate
