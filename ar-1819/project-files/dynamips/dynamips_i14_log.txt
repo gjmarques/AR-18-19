@@ -1,0 +1,44 @@
+Jun 18 11:10:52.604 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jun 18 11:10:52.604 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 49999.
+Jun 18 11:10:53.092 HYPERVISOR: exec_cmd: hypervisor version 
+Jun 18 11:10:53.092 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\JoãoMonteiro\Desktop\AR\AR-18-19\ar-1819\project-files\dynamips 
+Jun 18 11:10:53.092 GENERAL: working_dir=C:\Users\JoãoMonteiro\Desktop\AR\AR-18-19\ar-1819\project-files\dynamips
+Jun 18 11:10:53.093 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\JoãoMonteiro\Desktop\AR\AR-18-19\ar-1819\project-files\dynamips\bfb019a8-725d-4cf6-866d-7076932c6558 
+Jun 18 11:10:53.093 GENERAL: working_dir=C:\Users\JoãoMonteiro\Desktop\AR\AR-18-19\ar-1819\project-files\dynamips\bfb019a8-725d-4cf6-866d-7076932c6558
+Jun 18 11:10:53.093 HYPERVISOR: exec_cmd: vm create A_E2 12 c3725 
+Jun 18 11:10:53.095 VM: VM A_E2 created.
+Jun 18 11:10:53.096 HYPERVISOR: exec_cmd: vm set_con_tcp_port A_E2 5034 
+Jun 18 11:10:53.096 HYPERVISOR: exec_cmd: c3725 get_mac_addr A_E2 
+Jun 18 11:10:53.096 HYPERVISOR: exec_cmd: vm set_disk0 A_E2 1 
+Jun 18 11:10:53.097 HYPERVISOR: exec_cmd: vm set_exec_area A_E2 64 
+Jun 18 11:10:53.097 HYPERVISOR: exec_cmd: vm get_status A_E2 
+Jun 18 11:10:53.097 HYPERVISOR: exec_cmd: vm set_idle_pc A_E2 0x60a6a1e0 
+Jun 18 11:10:53.099 HYPERVISOR: exec_cmd: vm set_ios A_E2 C:/Users/JoãoMonteiro/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Jun 18 11:10:53.099 HYPERVISOR: exec_cmd: c3725 set_mac_addr A_E2 c20c.08ac.0000 
+Jun 18 11:10:53.099 HYPERVISOR: exec_cmd: vm set_nvram A_E2 256 
+Jun 18 11:10:53.100 HYPERVISOR: exec_cmd: vm get_status A_E2 
+Jun 18 11:10:53.100 HYPERVISOR: exec_cmd: vm slot_add_binding A_E2 1 0 NM-16ESW 
+Jun 18 11:11:00.160 HYPERVISOR: exec_cmd: nio create_udp udp-9d2f5f76-5192-4f9d-9b3a-88c6c4cf9da1 10078 127.0.0.1 10079 
+Jun 18 11:11:00.692 HYPERVISOR: exec_cmd: vm slot_add_nio_binding A_E2 1 0 udp-9d2f5f76-5192-4f9d-9b3a-88c6c4cf9da1 
+Jun 18 11:11:00.694 HYPERVISOR: exec_cmd: vm get_status A_E2 
+Jun 18 11:11:00.778 HYPERVISOR: exec_cmd: nio create_udp udp-7ec4b7a4-c486-4ca3-9808-590fb8f1a046 10084 127.0.0.1 10085 
+Jun 18 11:11:00.779 HYPERVISOR: exec_cmd: vm slot_add_nio_binding A_E2 1 1 udp-7ec4b7a4-c486-4ca3-9808-590fb8f1a046 
+Jun 18 11:11:00.780 HYPERVISOR: exec_cmd: vm get_status A_E2 
+Jun 18 11:11:18.250 HYPERVISOR: exec_cmd: vm create Ghost 0 c3725 
+Jun 18 11:11:18.252 VM: VM Ghost created.
+Jun 18 11:11:18.252 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/JoãoMonteiro/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Jun 18 11:11:18.252 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jun 18 11:11:18.252 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'C:\Users\JoãoMonteiro\Desktop\AR\AR-18-19\ar-1819\project-files\dynamips\c3725-advipservicesk9-mz.124-21.image-128.ghost' 
+Jun 18 11:11:18.252 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jun 18 11:11:18.253 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jun 18 11:11:18.253 HYPERVISOR: exec_cmd: vm start Ghost 
+Jun 18 11:11:18.538 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jun 18 11:11:18.698 VM: VM Ghost shutdown.
+Jun 18 11:11:18.698 VM: VM Ghost destroyed.
+Jun 18 11:11:18.720 HYPERVISOR: exec_cmd: vm get_status A_E2 
+Jun 18 11:11:18.724 HYPERVISOR: exec_cmd: vm set_config A_E2 configs\i12_startup-config.cfg 
+Jun 18 11:11:18.724 HYPERVISOR: exec_cmd: vm start A_E2 
+Jun 18 12:24:19.675 HYPERVISOR: exec_cmd: vm get_status A_E2 
+Jun 18 12:24:19.675 HYPERVISOR: exec_cmd: vm stop A_E2 
+Jun 18 12:24:19.785 VM: VM A_E2 shutdown.
+Jun 18 12:24:19.786 HYPERVISOR: exec_cmd: vm extract_config A_E2 

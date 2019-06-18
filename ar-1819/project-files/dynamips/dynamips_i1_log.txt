@@ -1,0 +1,51 @@
+Jun 18 11:10:45.928 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jun 18 11:10:45.928 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 49945.
+Jun 18 11:10:46.119 HYPERVISOR: exec_cmd: hypervisor version 
+Jun 18 11:10:46.119 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\JoãoMonteiro\Desktop\AR\AR-18-19\ar-1819\project-files\dynamips 
+Jun 18 11:10:46.125 GENERAL: working_dir=C:\Users\JoãoMonteiro\Desktop\AR\AR-18-19\ar-1819\project-files\dynamips
+Jun 18 11:10:46.125 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\JoãoMonteiro\Desktop\AR\AR-18-19\ar-1819\project-files\dynamips\105d715d-2334-4cd0-ae08-afeb6de398f2 
+Jun 18 11:10:46.125 GENERAL: working_dir=C:\Users\JoãoMonteiro\Desktop\AR\AR-18-19\ar-1819\project-files\dynamips\105d715d-2334-4cd0-ae08-afeb6de398f2
+Jun 18 11:10:46.125 HYPERVISOR: exec_cmd: vm create L_R1 1 c7200 
+Jun 18 11:10:46.126 VM: VM L_R1 created.
+Jun 18 11:10:46.127 HYPERVISOR: exec_cmd: vm set_con_tcp_port L_R1 5000 
+Jun 18 11:10:46.127 HYPERVISOR: exec_cmd: c7200 get_mac_addr L_R1 
+Jun 18 11:10:46.127 HYPERVISOR: exec_cmd: vm get_status L_R1 
+Jun 18 11:10:46.127 HYPERVISOR: exec_cmd: vm slot_add_binding L_R1 0 0 C7200-IO-FE 
+Jun 18 11:10:46.128 HYPERVISOR: exec_cmd: vm set_disk0 L_R1 0 
+Jun 18 11:10:46.128 HYPERVISOR: exec_cmd: vm set_exec_area L_R1 64 
+Jun 18 11:10:46.128 HYPERVISOR: exec_cmd: vm get_status L_R1 
+Jun 18 11:10:46.128 HYPERVISOR: exec_cmd: vm set_idle_pc L_R1 0x601712a8 
+Jun 18 11:10:46.129 HYPERVISOR: exec_cmd: vm set_ios L_R1 C:/Users/JoãoMonteiro/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jun 18 11:10:46.130 HYPERVISOR: exec_cmd: c7200 set_mac_addr L_R1 ca01.3adc.0000 
+Jun 18 11:10:46.130 HYPERVISOR: exec_cmd: vm set_nvram L_R1 512 
+Jun 18 11:10:46.130 HYPERVISOR: exec_cmd: vm set_ram L_R1 512 
+Jun 18 11:10:46.130 HYPERVISOR: exec_cmd: vm get_status L_R1 
+Jun 18 11:10:46.131 HYPERVISOR: exec_cmd: vm slot_add_binding L_R1 1 0 PA-2FE-TX 
+Jun 18 11:10:46.131 HYPERVISOR: exec_cmd: vm get_status L_R1 
+Jun 18 11:10:46.131 HYPERVISOR: exec_cmd: vm slot_add_binding L_R1 2 0 PA-2FE-TX 
+Jun 18 11:10:54.041 HYPERVISOR: exec_cmd: nio create_udp udp-e378e436-3404-43de-9d5b-f91615e6f6c8 10002 127.0.0.1 10003 
+Jun 18 11:10:54.603 HYPERVISOR: exec_cmd: vm slot_add_nio_binding L_R1 0 0 udp-e378e436-3404-43de-9d5b-f91615e6f6c8 
+Jun 18 11:10:54.603 HYPERVISOR: exec_cmd: vm get_status L_R1 
+Jun 18 11:10:55.803 HYPERVISOR: exec_cmd: nio create_udp udp-35ff2b0e-d049-477b-9e73-da941c1a6a62 10014 127.0.0.1 10015 
+Jun 18 11:10:55.806 HYPERVISOR: exec_cmd: vm slot_add_nio_binding L_R1 1 0 udp-35ff2b0e-d049-477b-9e73-da941c1a6a62 
+Jun 18 11:10:55.806 HYPERVISOR: exec_cmd: vm get_status L_R1 
+Jun 18 11:11:13.841 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jun 18 11:11:13.844 VM: VM Ghost created.
+Jun 18 11:11:13.844 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/JoãoMonteiro/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jun 18 11:11:13.845 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jun 18 11:11:13.845 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'C:\Users\JoãoMonteiro\Desktop\AR\AR-18-19\ar-1819\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jun 18 11:11:13.845 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jun 18 11:11:13.845 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jun 18 11:11:13.846 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jun 18 11:11:13.846 HYPERVISOR: exec_cmd: vm start Ghost 
+Jun 18 11:11:13.868 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jun 18 11:11:14.085 VM: VM Ghost shutdown.
+Jun 18 11:11:14.085 VM: VM Ghost destroyed.
+Jun 18 11:11:14.093 HYPERVISOR: exec_cmd: vm get_status L_R1 
+Jun 18 11:11:14.221 HYPERVISOR: exec_cmd: vm set_config L_R1 configs\i1_startup-config.cfg 
+Jun 18 11:11:14.221 HYPERVISOR: exec_cmd: vm start L_R1 
+Jun 18 11:11:44.617 HYPERVISOR: exec_cmd: vm extract_config L_R1 
+Jun 18 12:24:18.174 HYPERVISOR: exec_cmd: vm get_status L_R1 
+Jun 18 12:24:18.175 HYPERVISOR: exec_cmd: vm stop L_R1 
+Jun 18 12:24:18.349 VM: VM L_R1 shutdown.
+Jun 18 12:24:18.355 HYPERVISOR: exec_cmd: vm extract_config L_R1 

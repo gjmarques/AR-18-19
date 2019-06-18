@@ -1,0 +1,56 @@
+Jun 18 11:10:48.864 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jun 18 11:10:48.864 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 49968.
+Jun 18 11:10:49.341 HYPERVISOR: exec_cmd: hypervisor version 
+Jun 18 11:10:49.341 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\JoãoMonteiro\Desktop\AR\AR-18-19\ar-1819\project-files\dynamips 
+Jun 18 11:10:49.341 GENERAL: working_dir=C:\Users\JoãoMonteiro\Desktop\AR\AR-18-19\ar-1819\project-files\dynamips
+Jun 18 11:10:49.342 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\JoãoMonteiro\Desktop\AR\AR-18-19\ar-1819\project-files\dynamips\0911ec29-bd34-4564-b4ba-5d3083a73bd1 
+Jun 18 11:10:49.345 GENERAL: working_dir=C:\Users\JoãoMonteiro\Desktop\AR\AR-18-19\ar-1819\project-files\dynamips\0911ec29-bd34-4564-b4ba-5d3083a73bd1
+Jun 18 11:10:49.345 HYPERVISOR: exec_cmd: vm create MICROONDAS 7 c7200 
+Jun 18 11:10:49.347 VM: VM MICROONDAS created.
+Jun 18 11:10:49.347 HYPERVISOR: exec_cmd: vm set_con_tcp_port MICROONDAS 5011 
+Jun 18 11:10:49.347 HYPERVISOR: exec_cmd: c7200 get_mac_addr MICROONDAS 
+Jun 18 11:10:49.347 HYPERVISOR: exec_cmd: vm get_status MICROONDAS 
+Jun 18 11:10:49.348 HYPERVISOR: exec_cmd: vm slot_add_binding MICROONDAS 0 0 C7200-IO-FE 
+Jun 18 11:10:49.348 HYPERVISOR: exec_cmd: vm set_disk0 MICROONDAS 0 
+Jun 18 11:10:49.349 HYPERVISOR: exec_cmd: vm set_exec_area MICROONDAS 64 
+Jun 18 11:10:49.349 HYPERVISOR: exec_cmd: vm get_status MICROONDAS 
+Jun 18 11:10:49.349 HYPERVISOR: exec_cmd: vm set_idle_pc MICROONDAS 0x601712a8 
+Jun 18 11:10:49.350 HYPERVISOR: exec_cmd: vm set_ios MICROONDAS C:/Users/JoãoMonteiro/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jun 18 11:10:49.351 HYPERVISOR: exec_cmd: c7200 set_mac_addr MICROONDAS ca07.2290.0000 
+Jun 18 11:10:49.351 HYPERVISOR: exec_cmd: vm set_nvram MICROONDAS 512 
+Jun 18 11:10:49.352 HYPERVISOR: exec_cmd: vm set_ram MICROONDAS 512 
+Jun 18 11:10:49.352 HYPERVISOR: exec_cmd: vm get_status MICROONDAS 
+Jun 18 11:10:49.353 HYPERVISOR: exec_cmd: vm slot_add_binding MICROONDAS 1 0 PA-2FE-TX 
+Jun 18 11:11:15.785 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jun 18 11:11:15.787 VM: VM Ghost created.
+Jun 18 11:11:15.787 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/JoãoMonteiro/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jun 18 11:11:15.787 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jun 18 11:11:15.787 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'C:\Users\JoãoMonteiro\Desktop\AR\AR-18-19\ar-1819\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jun 18 11:11:15.787 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jun 18 11:11:15.788 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jun 18 11:11:15.788 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jun 18 11:11:15.788 HYPERVISOR: exec_cmd: vm start Ghost 
+Jun 18 11:11:15.809 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jun 18 11:11:16.030 VM: VM Ghost shutdown.
+Jun 18 11:11:16.030 VM: VM Ghost destroyed.
+Jun 18 11:11:16.040 HYPERVISOR: exec_cmd: vm get_status MICROONDAS 
+Jun 18 11:11:16.040 HYPERVISOR: exec_cmd: vm set_config MICROONDAS configs\i7_startup-config.cfg 
+Jun 18 11:11:16.040 HYPERVISOR: exec_cmd: vm start MICROONDAS 
+Jun 18 11:11:46.558 HYPERVISOR: exec_cmd: vm extract_config MICROONDAS 
+Jun 18 12:23:11.975 HYPERVISOR: exec_cmd: nio create_udp udp-ed2be55d-4f5d-43ea-b246-82bfcf0242e2 10132 127.0.0.1 10133 
+Jun 18 12:23:12.546 HYPERVISOR: exec_cmd: vm slot_add_nio_binding MICROONDAS 0 0 udp-ed2be55d-4f5d-43ea-b246-82bfcf0242e2 
+Jun 18 12:23:12.546 HYPERVISOR: exec_cmd: vm get_status MICROONDAS 
+Jun 18 12:23:12.547 HYPERVISOR: exec_cmd: vm slot_enable_nio MICROONDAS 0 0 
+Jun 18 12:24:13.236 HYPERVISOR: exec_cmd: vm get_status MICROONDAS 
+Jun 18 12:24:13.237 HYPERVISOR: exec_cmd: vm slot_disable_nio MICROONDAS 0 0 
+Jun 18 12:24:13.248 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding MICROONDAS 0 0 
+Jun 18 12:24:13.251 HYPERVISOR: exec_cmd: nio delete udp-ed2be55d-4f5d-43ea-b246-82bfcf0242e2 
+Jun 18 12:24:13.624 HYPERVISOR: exec_cmd: vm get_status MICROONDAS 
+Jun 18 12:24:13.624 HYPERVISOR: exec_cmd: vm stop MICROONDAS 
+Jun 18 12:24:13.731 VM: VM MICROONDAS shutdown.
+Jun 18 12:24:13.732 HYPERVISOR: exec_cmd: vm extract_config MICROONDAS 
+Jun 18 12:24:13.743 HYPERVISOR: exec_cmd: vm delete MICROONDAS 
+Jun 18 12:24:13.744 VM: VM MICROONDAS destroyed.
+Jun 18 12:24:13.753 HYPERVISOR: exec_cmd: hypervisor stop 
+Jun 18 12:24:13.977 HYPERVISOR: Stopped.
+Jun 18 12:24:13.977 GENERAL: reset done.

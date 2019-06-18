@@ -1,0 +1,21 @@
+Jun 18 11:10:52.071 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jun 18 11:10:52.071 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 49992.
+Jun 18 11:10:52.551 HYPERVISOR: exec_cmd: hypervisor version 
+Jun 18 11:10:52.551 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\JoãoMonteiro\Desktop\AR\AR-18-19\ar-1819\project-files\dynamips 
+Jun 18 11:10:52.551 GENERAL: working_dir=C:\Users\JoãoMonteiro\Desktop\AR\AR-18-19\ar-1819\project-files\dynamips
+Jun 18 11:10:52.552 HYPERVISOR: exec_cmd: ethsw create A_SW_E2 
+Jun 18 11:10:59.154 HYPERVISOR: exec_cmd: nio create_udp udp-cb1de5d2-7eb9-4c1c-bceb-557011ebfd47 10054 127.0.0.1 10055 
+Jun 18 11:10:59.155 HYPERVISOR: exec_cmd: ethsw add_nio A_SW_E2 udp-cb1de5d2-7eb9-4c1c-bceb-557011ebfd47 
+Jun 18 11:10:59.172 HYPERVISOR: exec_cmd: ethsw set_access_port A_SW_E2 udp-cb1de5d2-7eb9-4c1c-bceb-557011ebfd47 32 
+Jun 18 11:10:59.244 HYPERVISOR: exec_cmd: nio create_udp udp-3a637ddc-93e1-4fbd-8f2a-7d5b21851749 10056 127.0.0.1 10057 
+Jun 18 11:10:59.245 HYPERVISOR: exec_cmd: ethsw add_nio A_SW_E2 udp-3a637ddc-93e1-4fbd-8f2a-7d5b21851749 
+Jun 18 11:10:59.256 HYPERVISOR: exec_cmd: ethsw set_access_port A_SW_E2 udp-3a637ddc-93e1-4fbd-8f2a-7d5b21851749 42 
+Jun 18 11:10:59.325 HYPERVISOR: exec_cmd: nio create_udp udp-a5fbe3a5-71d2-4eea-83da-9b41577ed618 10058 127.0.0.1 10059 
+Jun 18 11:10:59.325 HYPERVISOR: exec_cmd: ethsw add_nio A_SW_E2 udp-a5fbe3a5-71d2-4eea-83da-9b41577ed618 
+Jun 18 11:10:59.339 HYPERVISOR: exec_cmd: ethsw set_access_port A_SW_E2 udp-a5fbe3a5-71d2-4eea-83da-9b41577ed618 1 
+Jun 18 11:11:00.787 HYPERVISOR: exec_cmd: nio create_udp udp-4d3e3153-1e3c-4fc3-bfa6-3d91c501df26 10083 127.0.0.1 10082 
+Jun 18 11:11:00.787 HYPERVISOR: exec_cmd: ethsw add_nio A_SW_E2 udp-4d3e3153-1e3c-4fc3-bfa6-3d91c501df26 
+Jun 18 11:11:00.791 HYPERVISOR: exec_cmd: ethsw set_dot1q_port A_SW_E2 udp-4d3e3153-1e3c-4fc3-bfa6-3d91c501df26 1 
+Jun 18 11:11:01.892 HYPERVISOR: exec_cmd: nio create_udp udp-fdcdd2f4-8cc0-4da0-a12c-be685eb8877e 10102 127.0.0.1 10103 
+Jun 18 11:11:01.893 HYPERVISOR: exec_cmd: ethsw add_nio A_SW_E2 udp-fdcdd2f4-8cc0-4da0-a12c-be685eb8877e 
+Jun 18 11:11:01.908 HYPERVISOR: exec_cmd: ethsw set_access_port A_SW_E2 udp-fdcdd2f4-8cc0-4da0-a12c-be685eb8877e 2 
