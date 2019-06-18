@@ -1,0 +1,51 @@
+--------LISBOA
+ipv6 unicast-routing
+
+--INT_F1/0
+int f1/0
+ip add 102.1.1.1 255.255.255.252
+no shut
+ip ospf 2 area 0
+ipv6 enable
+ipv6 ospf 2 area 0
+ipv6 address 2100:1:1:201::1/64
+
+--INT_F0/0
+int f0/0
+ip address 10.100.3.2 255.255.255.252
+no shut
+ip ospf 4 area 0
+
+
+crypto map nss-cm
+ip access-list extended nss-cm-acl
+permit ip 102.0.0.0 0.255.255.255 101.0.0.0 0.255.255.255
+ip route 101.0.0.0 255.0.0.0 11.11.11.1
+
+
+--IPSEC_VPN
+crypto isakmp policy 20
+authentication pre-share
+crypto isakmp key labcom address 11.11.11.1
+crypto ipsec transform-set nss-ts esp-3des esp-sha-hmac
+crypto map nss-cm 10 ipsec-isakmp
+set peer 11.11.11.1
+set transform-set nss-ts
+match address nss-cm-acl
+
+--OSPF_2
+router ospf 2
+router-id 1.1.1.1
+ipv6 router ospf 2
+router-id 1.1.1.1
+
+--OSPF_4
+router ospf 4
+router-id 3.3.3.3
+ipv6 router ospf 4
+router-id 3.3.3.3
+
+--NAT
+access-list 1 permit 102.0.0.0 0.255.255.255
+ip nat pool POOLR 200.1.0.129 200.1.0.191 netmask 255.255.255.0
+ip nat inside source list 1 pool POOLR overload 
