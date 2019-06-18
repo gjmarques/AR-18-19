@@ -1,20 +1,54 @@
 --------AVEIRO
 ------A_R1
+ipv6 unicast-routing 
+
 --INT_F0/0
 int f0/0
 ip add 101.1.0.1 255.255.255.252
 no shut
 ip ospf 1 area 0
+ipv6 enable
+ipv6 ospf 1 area 0
+ipv6 address 2100:1:1:110::1/64
 
 --INT_F1/0
 int f1/0
 ip add 101.1.1.1 255.255.255.252
 no shut
 ip ospf 1 area 0
+ipv6 enable
+ipv6 ospf 1 area 0
+ipv6 address 2100:1:1:111::1/64
+
+--INT_F1/1
+int f1/1
+ip add 10.100.1.2 255.255.255.252
+no shut
+ip ospf 4 area 0
+crypto map dynamic-map
+ip route 102.0.0.0 255.0.0.0 11.11.11.2
 
 --OSPF_1
 router ospf 1
 router-id 1.1.1.1
+ipv6 router ospf 1
+router-id 1.1.1.1
+
+--OSPF_4
+router ospf 4
+router-id 11.11.11.11
+ipv6 router ospf 4
+router-id 11.11.11.11
+
+--IPSEC_VPN
+crypto isakmp policy 20
+authentication pre-share
+crypto isakmp key labcom address 0.0.0.0 0.0.0.0
+crypto ipsec transform-set nss-ts esp-3des esp-sha-hmac
+crypto dynamic-map nss-dmap 10
+set transform-set nss-ts
+reverse-route
+crypto map dynamic-map 10 ipsec-isakmp dynamic nss-dmap
 
 access-list 1 permit 101.0.0.0  0.255.255.255
 ip nat pool POOLR 200.1.0.1 200.1.0.126 netmask 255.255.255.128
@@ -25,11 +59,16 @@ ip nat Stateful id 2
     ip nat inside source list 1 pool POOLR mapping-id 10 overload 
 
 ------A_R2
+ipv6 unicast-routing 
+
 --INT_F0/0
 int f0/0
 ip add 101.1.0.2 255.255.255.252
 no shut
 ip ospf 1 area 0
+ipv6 enable
+ipv6 ospf 1 area 0
+ipv6 address 2100:1:1:110::2/64
 
 access-list 1 permit 101.0.0.0 0.255.255.255
 ip nat pool POOLR 200.1.0.1 200.1.0.126 netmask 255.255.255.128 
@@ -45,13 +84,31 @@ int f1/0
 ip add 101.1.2.1 255.255.255.252
 no shut
 ip ospf 1 area 0
+ipv6 enable
+ipv6 ospf 1 area 0
+ipv6 address 2100:1:1:112::1/64
+
+--INT_F1/1
+int f1/1
+ip add 10.100.2.2 255.255.255.252
+no shut
+ip ospf 4 area 0
 
 --OSPF_1
 router ospf 1
-router-id 2.2.2.2	
+router-id 2.2.2.2
+ipv6 router ospf 1
+router-id 2.2.2.2
+
+--OSPF_4
+router ospf 4
+router-id 12.12.12.12
+ipv6 router ospf 4
+router-id 12.12.12.12
 
 ------A_ESW1
 ip routing
+ipv6 unicast-routing 
 int range f1/2 - 4
 switchport mode trunk
 switchport trunk allowed vlan 1,2,8,1002-1005
@@ -69,6 +126,9 @@ no switchport
 ip add 101.1.1.2 255.255.255.252
 no shut
 ip ospf 1 area 0
+ipv6 enable
+ipv6 ospf 1 area 0
+ipv6 address 2100:1:1:111::2/64
 
 --INT_F1/1
 int f1/1
@@ -76,26 +136,37 @@ no switchport
 ip add 101.1.2.2 255.255.255.252
 no shut
 ip ospf 1 area 0
+ipv6 enable
+ipv6 ospf 1 area 0
+ipv6 address 2100:1:1:112::2/64
 
 --ADMIN
 int vlan 2
 ip address 101.2.0.1 255.255.255.0
 no autostate    
 ip ospf 1 area 0
+ipv6 enable
+ipv6 ospf 1 area 0
+ipv6 address 2100:1:1:120::1/64
 
 --PUBLIC_DATACENTER
 int vlan 8
 ip address 101.8.0.1 255.255.255.0
 no autostate
 ip ospf 1 area 0
+ipv6 enable
+ipv6 ospf 1 area 0
+ipv6 address 2100:1:1:1E0::1/64
 
 --OSPF_1
 router ospf 1
-redistribute ospf 1 subnets
+router-id 3.3.3.3
+ipv6 router ospf 1
 router-id 3.3.3.3
 
-------A_E1------
+------A_E1
 ip routing
+ipv6 unicast-routing 
 int range f1/0 - 1
 switchport mode trunk
 switchport trunk allowed vlan 1,2,1002-1005 
@@ -113,26 +184,36 @@ int vlan 2
 ip address 101.2.0.2 255.255.255.0
 no autostate
 ip ospf 1 area 0
+ipv6 enable
+ipv6 ospf 1 area 0
+ipv6 address 2100:1:1:120::2/64
 
 --WORKER_E1
 int vlan 31
 ip address 101.3.1.1 255.255.255.0
 no autostate
 ip ospf 1 area 0
+ipv6 enable
+ipv6 ospf 1 area 0
+ipv6 address 2100:1:1:131::1/64
 
 --GUEST_E1
 int vlan 41
 ip address 101.4.1.1 255.255.255.0
 no autostate
 ip ospf 1 area 0
+ipv6 enable
+ipv6 ospf 1 area 0
+ipv6 address 2100:1:1:141::1/64
 
 router ospf 1
-redistribute ospf 1 subnets
 router-id 4.4.4.4
---
+ipv6 router ospf 1
+router-id 4.4.4.4
 
-------A_E2------
+------A_E2
 ip routing
+ipv6 unicast-routing
 int range f1/0 - 1
 switchport mode trunk
 switchport trunk allowed vlan 1,2,1002-1005 
@@ -151,6 +232,9 @@ ip address 101.2.0.3 255.255.255.0
 no autostate
 ip ospf 1 area 0
 ip helper-address 101.8.0.3
+ipv6 enable
+ipv6 ospf 1 area 0
+ipv6 address 2100:1:1:120::3/64
 
 --WORKER_E2
 int vlan 32
@@ -158,6 +242,9 @@ ip address 101.3.2.1 255.255.255.0
 no autostate
 ip ospf 1 area 0
 ip helper-address 101.8.0.3
+ipv6 enable
+ipv6 ospf 1 area 0
+ipv6 address 2100:1:1:132::1/64
 
 --GUEST_E2
 int vlan 42
@@ -165,10 +252,15 @@ ip address 101.4.2.1 255.255.255.0
 no autostate
 ip ospf 1 area 0
 ip helper-address 101.8.0.3
+ipv6 enable
+ipv6 ospf 1 area 0
+ipv6 address 2100:1:1:142::1/64
 
-
+--OSPF_1
 router ospf 1
 redistribute ospf 1 subnets
+router-id 5.5.5.5
+ipv6 router ospf 1
 router-id 5.5.5.5
 
 
@@ -195,14 +287,3 @@ router-id 5.5.5.5
             peer AR_1(1/0)
             mapping-id 10
     ip nat inside source list 1 pool POOLR mapping-id 10 overload 
---
-
-------
-
-
-
-
-
-
-
-no autostate
