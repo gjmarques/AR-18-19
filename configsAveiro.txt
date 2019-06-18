@@ -3,6 +3,16 @@
 ipv6 unicast-routing 
 ip route 0.0.0.0 0.0.0.0 10.100.1.1
 
+
+--INT tunnel 0
+  int t0
+    ip add 10.1.3.1 255.255.255.252
+    tunnel mode gre ip 
+    tunnel source 10.1.3.1
+    tunnel destination 10.1.3.2
+    no shut
+    exit
+
 --INT_F0/0
 int f0/0
 ip add 101.1.0.1 255.255.255.252
@@ -76,6 +86,14 @@ ipv6 ospf 1 area 0
 ipv6 address 2100:1:1:110::2/64
 ip nat inside
 
+--INT tunnel 0
+  int t0
+    ip add 10.1.3.3 255.255.255.252
+    tunnel mode gre ip 
+    tunnel source 10.1.3.3
+    tunnel destination 10.1.3.2
+    no shut
+    exit
 --SNAT CONFIGURATION
 access-list 1 permit 101.0.0.0 0.255.255.255
 ip nat pool POOLR 200.1.0.1 200.1.0.126 netmask 255.255.255.128 
@@ -295,4 +313,15 @@ router-id 5.5.5.5
         primary A_R2(F1/0)
             peer AR_1(1/0)
             mapping-id 10
-    ip nat inside source list 1 pool POOLR mapping-id 10 overload 
+    ip nat inside source list 1 pool POOLR mapping-id 10 overload
+
+
+    --TUNNEL CONFIGURATION
+    int t0
+    ip add 10.1.3.1 255.255.255.252
+    tunnel mode gre ip 
+    tunnel source 10.1.3.1
+    tunnel destination 10.1.3.2
+    no shut
+    exit
+

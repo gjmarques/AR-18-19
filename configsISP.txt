@@ -1,36 +1,29 @@
 --------ISP
 ipv6 unicast-routing
-
+ip route 200.1.0.0 	255.255.255.128
 
 --INT_F0/0
 int f0/0
 ip add 10.100.1.1 255.255.255.252
 no shut
-ip ospf 4 area 0
+
 
 
 --INT_F1/0
 int f1/0
 ip add 10.100.2.1 255.255.255.252
 no shut
-ip ospf 4 area 0
+
 
 
 --INT_F1/1
 int f1/1
 ip add 10.100.3.1 255.255.255.252
 no shut
-ip ospf 4 area 0
+
 
 
 --INT_F2/0
 int f2/0
 ip add 10.100.4.1 255.255.255.252
 no shut
-ip ospf 4 area 0
-
---OSPF_4
-router ospf 4
-router-id 10.10.10.10
-ipv6 router ospf 4
-router-id 10.10.10.10
