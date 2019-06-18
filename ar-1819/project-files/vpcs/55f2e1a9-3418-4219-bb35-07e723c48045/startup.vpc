@@ -1,2 +1,2 @@
-set pcname PC-3
-ip 2100:1:1:120::5/64
+set pcname ADMIN_E2
+ip 2100:1:1:120::5/64

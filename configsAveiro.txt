@@ -3,19 +3,10 @@
 ipv6 unicast-routing 
 ip route 0.0.0.0 0.0.0.0 10.100.1.1
 
---INT_F0/0
-int f0/0
-ip add 101.1.0.1 255.255.255.252
-no shut
-ip ospf 1 area 0
-ipv6 enable
-ipv6 ospf 1 area 0
-ipv6 address 2100:1:1:110::1/64
-ip nat inside
-
 --INT_F1/0
 int f1/0
 ip add 101.1.1.1 255.255.255.252
+ip address 200.1.0.1 255.255.255.128 secondary
 no shut
 ip ospf 1 area 0
 ipv6 enable
@@ -28,11 +19,13 @@ int f1/1
 ip add 10.100.1.2 255.255.255.252
 no shut
 ip ospf 4 area 0
-crypto map dynamic-map
 ip nat outside
 
 --OSPF_1
 router ospf 1
+network 201.0.0.0 0.0.0.127 area 0 
+default-information originate always metric 10
+redistribute ospf 4 subnets
 router-id 1.1.1.1
 ipv6 router ospf 1
 router-id 1.1.1.1
@@ -40,25 +33,19 @@ router-id 1.1.1.1
 --OSPF_4
 router ospf 4
 router-id 11.11.11.11
+redistribute ospf 1 subnets
+distribute-list 50 out
 ipv6 router ospf 4
 router-id 11.11.11.11
 
---IPSEC_VPN_AGGREGATOR
-crypto isakmp policy 20
-authentication pre-share
-crypto isakmp key labcom address 0.0.0.0 0.0.0.0
-crypto ipsec transform-set nss-ts esp-3des esp-sha-hmac
-crypto dynamic-map nss-dmap 10
-set transform-set nss-ts
-reverse-route
-crypto map dynamic-map 10 ipsec-isakmp dynamic nss-dmap
-
 --SNAT CONFIGURATION
+access-list 50 deny 101.0.0.0 0.255.255.255
+access-list 50 permit any
 access-list 1 permit 101.0.0.0  0.255.255.255
-ip nat pool POOLR 200.1.0.1 200.1.0.126 netmask 255.255.255.128
+ip nat pool POOLR 200.1.0.10 200.1.0.126 netmask 255.255.255.128
 ip nat Stateful id 2
         backup 101.1.1.1
-            peer 101.1.1.2
+            peer 101.1.2.1
             mapping-id 10
     ip nat inside source list 1 pool POOLR mapping-id 10 overload 
 
@@ -66,20 +53,10 @@ ip nat Stateful id 2
 ipv6 unicast-routing 
 ip route 0.0.0.0 0.0.0.0 10.100.1.1
 
---INT_F0/0
-int f0/0
-ip add 101.1.0.2 255.255.255.252
-no shut
-ip ospf 1 area 0
-ipv6 enable
-ipv6 ospf 1 area 0
-ipv6 address 2100:1:1:110::2/64
-ip nat inside
-
 --SNAT CONFIGURATION
+access-list 60 deny 101.0.0.0 0.255.255.255
+access-list 60 permit any
 access-list 1 permit 101.0.0.0 0.255.255.255
-ip nat pool POOLR 200.1.0.1 200.1.0.126 netmask 255.255.255.128 
-ip nat inside source list 1 pool POOLR overload 
 ip nat Stateful id 3
     primary 101.1.2.1
         peer 101.1.1.1
@@ -89,6 +66,7 @@ ip nat inside source list 1 pool POOLR mapping-id 10 overload
 --INT_F1/0
 int f1/0
 ip add 101.1.2.1 255.255.255.252
+ip address 200.1.0.2 255.255.255.128 secondary
 no shut
 ip ospf 1 area 0
 ipv6 enable
@@ -106,6 +84,8 @@ ip nat outside
 --OSPF_1
 router ospf 1
 router-id 2.2.2.2
+network 201.0.0.0 0.0.0.127 area 0 
+default-information originate always metric 5
 ipv6 router ospf 1
 router-id 2.2.2.2
 

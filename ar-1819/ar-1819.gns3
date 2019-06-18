@@ -68,37 +68,6 @@
         "links": [
             {
                 "filters": {},
-                "link_id": "6578d904-8e71-4021-85f7-d960baf2b858",
-                "nodes": [
-                    {
-                        "adapter_number": 0,
-                        "label": {
-                            "rotation": 0,
-                            "style": "font-family: MS Shell Dlg 2;font-size: 10.0;fill: #000000;fill-opacity: 1.0;",
-                            "text": "0/0",
-                            "x": -10,
-                            "y": -10
-                        },
-                        "node_id": "e53665fc-e1d9-4248-bd4b-c9eb4e5d120b",
-                        "port_number": 0
-                    },
-                    {
-                        "adapter_number": 0,
-                        "label": {
-                            "rotation": 0,
-                            "style": "font-family: MS Shell Dlg 2;font-size: 10.0;fill: #000000;fill-opacity: 1.0;",
-                            "text": "0/0",
-                            "x": -17,
-                            "y": -2
-                        },
-                        "node_id": "a16e3df1-e1b3-4f76-83ec-1576f01c49dd",
-                        "port_number": 0
-                    }
-                ],
-                "suspend": false
-            },
-            {
-                "filters": {},
                 "link_id": "4d158c4b-ed18-49df-9140-bd87dcea1179",
                 "nodes": [
                     {
@@ -952,8 +921,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "A_R2",
-                    "x": 6,
-                    "y": -25
+                    "x": 8,
+                    "y": -31
                 },
                 "name": "A_R2",
                 "node_id": "e53665fc-e1d9-4248-bd4b-c9eb4e5d120b",
@@ -1619,11 +1588,11 @@
                 "label": {
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                    "text": "PC-3",
-                    "x": 8,
+                    "text": "ADMIN_E2",
+                    "x": -18,
                     "y": -25
                 },
-                "name": "PC-3",
+                "name": "ADMIN_E2",
                 "node_id": "55f2e1a9-3418-4219-bb35-07e723c48045",
                 "node_type": "vpcs",
                 "port_name_format": "Ethernet{0}",
