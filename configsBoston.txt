@@ -1,0 +1,66 @@
+ipv6 unicast-routing
+ip route 0.0.0.0 0.0.0.0 10.100.4.1
+
+--INT_F1/0
+int f1/0
+ip add 103.1.1.1 255.255.255.252
+ip address 200.1.0.192 255.255.255.192 secondary
+no shut
+ip ospf 2 area 0
+ipv6 enable
+ipv6 ospf 2 area 0
+ipv6 address 2100:1:1:301::1/64
+ip nat inside
+
+--INT_F0/0
+int f0/0
+ip address 10.100.4.2 255.255.255.252
+no shut
+ip ospf 4 area 0
+ip nat outside
+
+
+--INT tunnel 1
+  int t1
+    ip add  unnumbered FastEthernet1/1
+ tunnel source 10.100.4.2
+ tunnel mode ipsec ipv4
+ tunnel destination 10.100.1.2
+ tunnel protection ipsec profile DataSciPT
+
+    no shut
+    exit
+
+--IPSEC_VPN
+crypto isakmp policy 30
+authentication pre-share
+exit
+crypto isakmp key labcom address 10.100.1.1
+crypto ipsec transform-set authT ah-sha-hmac
+crypto ipsec transform-set cipherT esp-des
+crypto ipsec transform-set auth_ciphT ah-sha-hmac esp-des
+crypto ipsec profile DataSciPT
+
+--OSPF_2
+router ospf 2
+router-id 1.1.1.1
+network 201.0.0.192 0.0.0.63 area 0 
+default-information originate always
+redistribute ospf 4 subnets
+ipv6 router ospf 2
+router-id 1.1.1.1
+
+--OSPF_4
+router ospf 4
+router-id 3.3.3.3
+redistribute ospf 2 subnets
+distribute-list 50 out
+ipv6 router ospf 4
+router-id 3.3.3.3
+
+--NAT
+access-list 50 deny 103.0.0.0 0.255.255.255
+access-list 50 permit any
+access-list 1 permit 103.0.0.0 0.255.255.255
+ip nat pool POOLR 200.1.0.193 200.1.0.254 netmask 255.255.255.192
+ip nat inside source list 1 pool POOLR overload 
