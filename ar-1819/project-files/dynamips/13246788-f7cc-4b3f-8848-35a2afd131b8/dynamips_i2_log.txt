@@ -1,0 +1,37 @@
+Jun 18 13:10:59.110 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jun 18 13:10:59.112 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 59048.
+Jun 18 13:10:59.588 HYPERVISOR: exec_cmd: hypervisor version 
+Jun 18 13:10:59.588 HYPERVISOR: exec_cmd: hypervisor working_dir D:\AR\AR-18-19\ar-1819\project-files\dynamips 
+Jun 18 13:10:59.588 GENERAL: working_dir=D:\AR\AR-18-19\ar-1819\project-files\dynamips
+Jun 18 13:10:59.589 HYPERVISOR: exec_cmd: hypervisor working_dir D:\AR\AR-18-19\ar-1819\project-files\dynamips\905cc43b-9fd7-4f84-b0c6-7e7d161353c3 
+Jun 18 13:10:59.589 GENERAL: working_dir=D:\AR\AR-18-19\ar-1819\project-files\dynamips\905cc43b-9fd7-4f84-b0c6-7e7d161353c3
+Jun 18 13:10:59.589 HYPERVISOR: exec_cmd: vm create B_R1 3 c7200 
+Jun 18 13:10:59.607 VM: VM B_R1 created.
+Jun 18 13:10:59.607 HYPERVISOR: exec_cmd: vm set_con_tcp_port B_R1 5002 
+Jun 18 13:10:59.608 HYPERVISOR: exec_cmd: c7200 get_mac_addr B_R1 
+Jun 18 13:10:59.608 HYPERVISOR: exec_cmd: vm get_status B_R1 
+Jun 18 13:10:59.608 HYPERVISOR: exec_cmd: vm slot_add_binding B_R1 0 0 C7200-IO-FE 
+Jun 18 13:10:59.609 HYPERVISOR: exec_cmd: vm set_disk0 B_R1 0 
+Jun 18 13:10:59.609 HYPERVISOR: exec_cmd: vm set_exec_area B_R1 64 
+Jun 18 13:10:59.610 HYPERVISOR: exec_cmd: vm get_status B_R1 
+Jun 18 13:10:59.610 HYPERVISOR: exec_cmd: vm set_idle_pc B_R1 0x601712a8 
+Jun 18 13:10:59.611 HYPERVISOR: exec_cmd: vm set_ios B_R1 C:/Users/Goncalo Marques/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jun 18 13:10:59.612 HYPERVISOR: exec_cmd: c7200 set_mac_addr B_R1 ca03.4b98.0000 
+Jun 18 13:10:59.612 HYPERVISOR: exec_cmd: vm set_nvram B_R1 512 
+Jun 18 13:10:59.613 HYPERVISOR: exec_cmd: vm set_ram B_R1 512 
+Jun 18 13:10:59.613 HYPERVISOR: exec_cmd: vm get_status B_R1 
+Jun 18 13:10:59.614 HYPERVISOR: exec_cmd: vm slot_add_binding B_R1 1 0 PA-2FE-TX 
+Jun 18 13:10:59.614 HYPERVISOR: exec_cmd: vm get_status B_R1 
+Jun 18 13:10:59.615 HYPERVISOR: exec_cmd: vm slot_add_binding B_R1 2 0 PA-2FE-TX 
+Jun 18 13:11:11.943 HYPERVISOR: exec_cmd: nio create_udp udp-96bbacc5-f011-48df-9201-fbe88ca1de55 10082 127.0.0.1 10083 
+Jun 18 13:11:12.500 HYPERVISOR: exec_cmd: vm slot_add_nio_binding B_R1 0 0 udp-96bbacc5-f011-48df-9201-fbe88ca1de55 
+Jun 18 13:11:12.500 HYPERVISOR: exec_cmd: vm get_status B_R1 
+Jun 18 13:12:50.102 HYPERVISOR: exec_cmd: vm get_status B_R1 
+Jun 18 13:12:50.104 HYPERVISOR: exec_cmd: vm extract_config B_R1 
+Jun 18 13:12:51.116 HYPERVISOR: exec_cmd: vm get_status B_R1 
+Jun 18 13:12:51.116 HYPERVISOR: exec_cmd: vm extract_config B_R1 
+Jun 18 13:12:51.119 HYPERVISOR: exec_cmd: vm delete B_R1 
+Jun 18 13:12:51.119 VM: VM B_R1 destroyed.
+Jun 18 13:12:51.129 HYPERVISOR: exec_cmd: hypervisor stop 
+Jun 18 13:12:51.207 HYPERVISOR: Stopped.
+Jun 18 13:12:51.207 GENERAL: reset done.

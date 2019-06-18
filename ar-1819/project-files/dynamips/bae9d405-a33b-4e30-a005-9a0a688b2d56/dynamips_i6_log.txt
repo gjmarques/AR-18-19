@@ -1,0 +1,35 @@
+Jun 18 22:58:09.864 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jun 18 22:58:09.865 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 62726.
+Jun 18 22:58:10.359 HYPERVISOR: exec_cmd: hypervisor version 
+Jun 18 22:58:10.359 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Gns3Projects\AR-18-19\ar-1819\project-files\dynamips 
+Jun 18 22:58:10.359 GENERAL: working_dir=C:\Gns3Projects\AR-18-19\ar-1819\project-files\dynamips
+Jun 18 22:58:10.360 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Gns3Projects\AR-18-19\ar-1819\project-files\dynamips\b539f04d-fad1-4346-acd6-80f5a2004c3e 
+Jun 18 22:58:10.360 GENERAL: working_dir=C:\Gns3Projects\AR-18-19\ar-1819\project-files\dynamips\b539f04d-fad1-4346-acd6-80f5a2004c3e
+Jun 18 22:58:10.360 HYPERVISOR: exec_cmd: vm create A_E1 11 c3725 
+Jun 18 22:58:10.362 VM: VM A_E1 created.
+Jun 18 22:58:10.362 HYPERVISOR: exec_cmd: vm set_con_tcp_port A_E1 5036 
+Jun 18 22:58:10.363 HYPERVISOR: exec_cmd: c3725 get_mac_addr A_E1 
+Jun 18 22:58:10.363 HYPERVISOR: exec_cmd: vm set_disk0 A_E1 1 
+Jun 18 22:58:10.364 HYPERVISOR: exec_cmd: vm set_exec_area A_E1 64 
+Jun 18 22:58:10.364 HYPERVISOR: exec_cmd: vm get_status A_E1 
+Jun 18 22:58:10.364 HYPERVISOR: exec_cmd: vm set_idle_pc A_E1 0x60a6a1e0 
+Jun 18 22:58:10.365 HYPERVISOR: exec_cmd: vm set_ios A_E1 C:/Users/JoãoMonteiro/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Jun 18 22:58:10.366 HYPERVISOR: exec_cmd: c3725 set_mac_addr A_E1 c20b.4c24.0000 
+Jun 18 22:58:10.366 HYPERVISOR: exec_cmd: vm set_nvram A_E1 256 
+Jun 18 22:58:10.367 HYPERVISOR: exec_cmd: vm get_status A_E1 
+Jun 18 22:58:10.367 HYPERVISOR: exec_cmd: vm slot_add_binding A_E1 1 0 NM-16ESW 
+Jun 18 22:58:14.758 HYPERVISOR: exec_cmd: nio create_udp udp-49aea081-f4c7-405e-bcc7-6b442864614f 10024 127.0.0.1 10025 
+Jun 18 22:58:15.288 HYPERVISOR: exec_cmd: vm slot_add_nio_binding A_E1 1 0 udp-49aea081-f4c7-405e-bcc7-6b442864614f 
+Jun 18 22:58:15.289 HYPERVISOR: exec_cmd: vm get_status A_E1 
+Jun 18 22:58:15.343 HYPERVISOR: exec_cmd: nio create_udp udp-024d6d1a-5d4a-4b5e-a597-3153ad8b0b82 10028 127.0.0.1 10029 
+Jun 18 22:58:15.345 HYPERVISOR: exec_cmd: vm slot_add_nio_binding A_E1 1 1 udp-024d6d1a-5d4a-4b5e-a597-3153ad8b0b82 
+Jun 18 22:58:15.346 HYPERVISOR: exec_cmd: vm get_status A_E1 
+Jun 18 22:58:29.926 HYPERVISOR: exec_cmd: vm get_status A_E1 
+Jun 18 22:58:29.927 HYPERVISOR: exec_cmd: vm extract_config A_E1 
+Jun 18 22:58:30.314 HYPERVISOR: exec_cmd: vm get_status A_E1 
+Jun 18 22:58:30.314 HYPERVISOR: exec_cmd: vm extract_config A_E1 
+Jun 18 22:58:30.316 HYPERVISOR: exec_cmd: vm delete A_E1 
+Jun 18 22:58:30.316 VM: VM A_E1 destroyed.
+Jun 18 22:58:30.321 HYPERVISOR: exec_cmd: hypervisor stop 
+Jun 18 22:58:30.379 HYPERVISOR: Stopped.
+Jun 18 22:58:30.379 GENERAL: reset done.
