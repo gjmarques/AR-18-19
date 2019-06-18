@@ -1,6 +1,7 @@
 --------AVEIRO
 ------A_R1
 ipv6 unicast-routing 
+ip route 0.0.0.0 0.0.0.0 10.100.1.1
 
 --INT_F0/0
 int f0/0
@@ -10,6 +11,7 @@ ip ospf 1 area 0
 ipv6 enable
 ipv6 ospf 1 area 0
 ipv6 address 2100:1:1:110::1/64
+ip nat inside
 
 --INT_F1/0
 int f1/0
@@ -19,6 +21,7 @@ ip ospf 1 area 0
 ipv6 enable
 ipv6 ospf 1 area 0
 ipv6 address 2100:1:1:111::1/64
+ip nat inside
 
 --INT_F1/1
 int f1/1
@@ -26,7 +29,7 @@ ip add 10.100.1.2 255.255.255.252
 no shut
 ip ospf 4 area 0
 crypto map dynamic-map
-ip route 102.0.0.0 255.0.0.0 11.11.11.2
+ip nat outside
 
 --OSPF_1
 router ospf 1
@@ -40,7 +43,7 @@ router-id 11.11.11.11
 ipv6 router ospf 4
 router-id 11.11.11.11
 
---IPSEC_VPN
+--IPSEC_VPN_AGGREGATOR
 crypto isakmp policy 20
 authentication pre-share
 crypto isakmp key labcom address 0.0.0.0 0.0.0.0
@@ -50,6 +53,7 @@ set transform-set nss-ts
 reverse-route
 crypto map dynamic-map 10 ipsec-isakmp dynamic nss-dmap
 
+--SNAT CONFIGURATION
 access-list 1 permit 101.0.0.0  0.255.255.255
 ip nat pool POOLR 200.1.0.1 200.1.0.126 netmask 255.255.255.128
 ip nat Stateful id 2
@@ -60,6 +64,7 @@ ip nat Stateful id 2
 
 ------A_R2
 ipv6 unicast-routing 
+ip route 0.0.0.0 0.0.0.0 10.100.1.1
 
 --INT_F0/0
 int f0/0
@@ -69,7 +74,9 @@ ip ospf 1 area 0
 ipv6 enable
 ipv6 ospf 1 area 0
 ipv6 address 2100:1:1:110::2/64
+ip nat inside
 
+--SNAT CONFIGURATION
 access-list 1 permit 101.0.0.0 0.255.255.255
 ip nat pool POOLR 200.1.0.1 200.1.0.126 netmask 255.255.255.128 
 ip nat inside source list 1 pool POOLR overload 
@@ -87,12 +94,14 @@ ip ospf 1 area 0
 ipv6 enable
 ipv6 ospf 1 area 0
 ipv6 address 2100:1:1:112::1/64
+ip nat inside
 
 --INT_F1/1
 int f1/1
 ip add 10.100.2.2 255.255.255.252
 no shut
 ip ospf 4 area 0
+ip nat outside
 
 --OSPF_1
 router ospf 1
