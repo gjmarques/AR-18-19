@@ -1,0 +1,95 @@
+------------------OIERAS 1-----------------
+
+conf t
+
+crypto isakmp policy 30 
+authentication pre-share 
+crypto isakmp key ipsecLisboa address 220.0.0.3
+crypto isakmp key ipsecNovaYork address 220.0.0.4
+crypto ipsec transform-set cipherT esp-des 
+crypto ipsec profile ipsecL
+set transform-set cipherT
+
+interface Tunnel 10
+ip unnumbered f2/0
+tunnel source 220.0.0.1
+tunnel destination 220.0.0.3
+tunnel mode ipsec ipv4
+tunnel protection ipsec profile ipsecL
+
+access-list 110 permit ip 10.1.60.0 0.0.0.255 10.2.0.0 0.0.255.255
+route-map route-ipsec permit 10
+match ip address 110
+set interface tunnel 10
+
+interface Tunnel 20
+ip unnumbered f2/0
+tunnel source 220.0.0.1
+tunnel destination 220.0.0.4
+tunnel mode ipsec ipv4
+tunnel protection ipsec profile ipsecL
+
+access-list 120 permit ip 10.1.60.0 0.0.0.255 10.3.0.0 0.0.255.255
+route-map route-ipsec permit 20
+match ip address 120
+set interface tunnel 20
+
+ip policy route-map route-ipsec
+
+
+
+------------------LISBOA-----------------
+
+conf t
+
+crypto isakmp policy 30 
+authentication pre-share 
+no crypto isakmp key labcom address 220.0.0.1
+crypto isakmp key ipsecLisboa address 220.0.0.1
+crypto ipsec transform-set cipherT esp-des 
+crypto ipsec profile ipsecL
+set transform-set cipherT
+
+interface Tunnel 10
+ip unnumbered f0/0
+tunnel source 220.0.0.3
+tunnel destination 220.0.0.1
+tunnel mode ipsec ipv4
+tunnel protection ipsec profile ipsecL
+
+access-list 110 permit ip 10.2.0.0 0.0.255.255 10.1.60.0 0.0.0.255
+route-map ForceRouting permit 20
+match ip address 110
+set interface tunnel 10
+
+
+ip policy route-map ForceRouting
+
+
+------------------NOVA YORK-----------------
+
+conf t
+
+
+crypto isakmp policy 30 
+authentication pre-share
+crypto isakmp key ipsecNovaYork address 220.0.0.1
+crypto ipsec transform-set cipherT esp-des 
+crypto ipsec profile ipsecL
+set transform-set cipherT
+
+interface Tunnel 20
+ip unnumbered f0/0
+tunnel source 220.0.0.4
+tunnel destination 220.0.0.1
+tunnel mode ipsec ipv4
+tunnel protection ipsec profile ipsecL
+
+access-list 110 permit ip 10.3.0.0 0.0.255.255 10.1.60.0 0.0.0.255
+route-map route-ipsec permit 10
+match ip address 110
+set interface tunnel 20
+
+
+
+ip policy route-map route-ipsec

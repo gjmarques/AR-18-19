@@ -1,0 +1,50 @@
+Jul 03 18:27:50.059 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jul 03 18:27:50.060 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 50665.
+Jul 03 18:27:50.552 HYPERVISOR: exec_cmd: hypervisor version 
+Jul 03 18:27:50.552 HYPERVISOR: exec_cmd: hypervisor working_dir D:\AR\AR-RE\project-files\dynamips 
+Jul 03 18:27:50.553 GENERAL: working_dir=D:\AR\AR-RE\project-files\dynamips
+Jul 03 18:27:50.553 HYPERVISOR: exec_cmd: hypervisor working_dir D:\AR\AR-RE\project-files\dynamips\8359fdf9-dc88-475d-ab16-49c469034ce5 
+Jul 03 18:27:50.553 GENERAL: working_dir=D:\AR\AR-RE\project-files\dynamips\8359fdf9-dc88-475d-ab16-49c469034ce5
+Jul 03 18:27:50.555 HYPERVISOR: exec_cmd: vm create N1 12 c7200 
+Jul 03 18:27:50.556 VM: VM N1 created.
+Jul 03 18:27:50.557 HYPERVISOR: exec_cmd: vm set_con_tcp_port N1 5021 
+Jul 03 18:27:50.557 HYPERVISOR: exec_cmd: c7200 get_mac_addr N1 
+Jul 03 18:27:50.558 HYPERVISOR: exec_cmd: vm get_status N1 
+Jul 03 18:27:50.558 HYPERVISOR: exec_cmd: vm slot_add_binding N1 0 0 C7200-IO-FE 
+Jul 03 18:27:50.559 HYPERVISOR: exec_cmd: vm set_disk0 N1 0 
+Jul 03 18:27:50.560 HYPERVISOR: exec_cmd: vm set_exec_area N1 64 
+Jul 03 18:27:50.560 HYPERVISOR: exec_cmd: vm get_status N1 
+Jul 03 18:27:50.561 HYPERVISOR: exec_cmd: vm set_idle_pc N1 0x601712a8 
+Jul 03 18:27:50.562 HYPERVISOR: exec_cmd: vm set_ios N1 C:/Users/Goncalo Marques/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jul 03 18:27:50.563 HYPERVISOR: exec_cmd: c7200 set_mac_addr N1 ca0c.5304.0000 
+Jul 03 18:27:50.564 HYPERVISOR: exec_cmd: vm set_nvram N1 512 
+Jul 03 18:27:50.564 HYPERVISOR: exec_cmd: vm set_ram N1 512 
+Jul 03 18:27:50.565 HYPERVISOR: exec_cmd: vm get_status N1 
+Jul 03 18:27:50.566 HYPERVISOR: exec_cmd: vm slot_add_binding N1 1 0 PA-2FE-TX 
+Jul 03 18:28:01.465 HYPERVISOR: exec_cmd: nio create_udp udp-ff47a544-d90e-4100-84b8-fef6b98398d8 10154 127.0.0.1 10155 
+Jul 03 18:28:02.000 HYPERVISOR: exec_cmd: vm slot_add_nio_binding N1 0 0 udp-ff47a544-d90e-4100-84b8-fef6b98398d8 
+Jul 03 18:28:02.001 HYPERVISOR: exec_cmd: vm get_status N1 
+Jul 03 18:28:04.758 HYPERVISOR: exec_cmd: nio create_udp udp-98187ea5-f3b5-447b-be1c-792df3a645c1 10198 127.0.0.1 10199 
+Jul 03 18:28:04.760 HYPERVISOR: exec_cmd: vm slot_add_nio_binding N1 1 0 udp-98187ea5-f3b5-447b-be1c-792df3a645c1 
+Jul 03 18:28:04.761 HYPERVISOR: exec_cmd: vm get_status N1 
+Jul 03 18:29:54.022 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jul 03 18:29:54.022 VM: VM Ghost created.
+Jul 03 18:29:54.023 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/Goncalo Marques/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jul 03 18:29:54.023 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jul 03 18:29:54.023 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\AR\AR-RE\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jul 03 18:29:54.023 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jul 03 18:29:54.024 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jul 03 18:29:54.024 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jul 03 18:29:54.024 HYPERVISOR: exec_cmd: vm start Ghost 
+Jul 03 18:29:54.045 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jul 03 18:29:54.305 VM: VM Ghost shutdown.
+Jul 03 18:29:54.305 VM: VM Ghost destroyed.
+Jul 03 18:29:54.316 HYPERVISOR: exec_cmd: vm get_status N1 
+Jul 03 18:29:54.317 HYPERVISOR: exec_cmd: vm set_config N1 configs\i12_startup-config.cfg configs\i12_private-config.cfg 
+Jul 03 18:29:54.317 HYPERVISOR: exec_cmd: vm start N1 
+Jul 03 18:30:24.799 HYPERVISOR: exec_cmd: vm extract_config N1 
+Jul 03 18:30:54.812 HYPERVISOR: exec_cmd: vm extract_config N1 
+Jul 03 18:54:22.220 HYPERVISOR: exec_cmd: vm get_status N1 
+Jul 03 18:54:22.220 HYPERVISOR: exec_cmd: vm stop N1 
+Jul 03 18:54:22.396 VM: VM N1 shutdown.
+Jul 03 18:54:22.397 HYPERVISOR: exec_cmd: vm extract_config N1 

@@ -1,0 +1,191 @@
+---------------------CORE 1-----------------------
+
+vlan database
+vlan 1
+vlan 31
+vlan 32
+vlan 33
+vlan 40
+exit
+
+conf t
+
+ip routing
+ipv6 unicast-routing
+
+int vlan 1
+ip add 10.1.1.5 255.255.255.0
+ipv6 address 3400:20:20:1100::5/64
+ip ospf 20 area 0
+no autostate
+
+int vlan 31
+ip add 10.1.31.5 255.255.255.0
+ipv6 address 3400:20:20:1310::5/64
+ip ospf 20 area 0
+no autostate
+
+int vlan 32
+ip add 10.1.32.5 255.255.255.0
+ipv6 address 3400:20:20:1320::5/64
+ip ospf 20 area 0
+no autostate
+
+int vlan 33
+ip add 10.1.33.5 255.255.255.0
+ipv6 address 3400:20:20:1330::5/64
+ip ospf 20 area 0
+no autostate
+
+int vlan 40
+ip add 10.1.40.5 255.255.255.0
+ipv6 address 3400:20:20:1400::5/64
+ip ospf 20 area 0
+no autostate
+
+interface range f1/3 - 6
+switchport mode trunk 
+switchport trunk allowed vlan 1,31,32,33,40,1002-1005
+
+int f0/0
+ip address 192.168.10.1 255.255.255.0
+ip ospf 10 area 0
+no shut
+
+int f1/0
+no switchport
+ip address 10.1.0.6 255.255.255.252
+ipv6 address 3400:20:20:1000::6/64
+ip ospf 20 area 0
+no shut
+
+int f1/1
+no switchport
+ip address 10.1.0.14 255.255.255.252
+ipv6 address 3400:20:20:1000::14/64
+ip ospf 20 area 0
+no shut
+
+int f1/2
+no switchport
+ip address 10.1.0.21 255.255.255.252
+ipv6 address 3400:20:20:1000::21/64
+ip ospf 20 area 0
+no shut
+
+router ospf 10
+router-id 5.5.5.10
+default-information originate always
+
+router ospf 20
+router-id 5.5.5.5
+redistribute ospf 10 subnets
+passive-interface Vlan1
+passive-interface Vlan31
+passive-interface Vlan32
+passive-interface Vlan33
+exit
+
+end
+
+write
+
+
+---------------------CORE 2-----------------------
+
+vlan database
+vlan 1
+vlan 31
+vlan 32
+vlan 33
+vlan 40
+exit
+
+conf t
+
+ip routing
+ipv6 unicast-routing
+
+int vlan 1
+ip add 10.1.1.6 255.255.255.0
+ipv6 address 3400:20:20:1100::6/64
+ip ospf 20 area 0
+no autostate
+
+int vlan 31
+ip add 10.1.31.6 255.255.255.0
+ipv6 address 3400:20:20:1310::6/64
+ip ospf 20 area 0
+no autostate
+
+int vlan 32
+ip add 10.1.32.6 255.255.255.0
+ipv6 address 3400:20:20:1320::6/64
+ip ospf 20 area 0
+no autostate
+
+int vlan 33
+ip add 10.1.33.6 255.255.255.0
+ipv6 address 3400:20:20:1330::6/64
+ip ospf 20 area 0
+no autostate
+
+int vlan 40
+ip add 10.1.40.6 255.255.255.0
+ipv6 address 3400:20:20:1400::6/64
+ip ospf 20 area 0
+no autostate
+
+interface range f1/3 - 6
+switchport mode trunk 
+switchport trunk allowed vlan 1,31,32,33,40,1002-1005
+
+int f0/0
+ip address 192.168.11.1 255.255.255.0
+ip ospf 10 area 0
+no shut
+
+int f0/1
+ip address 10.1.0.253 255.255.255.252
+ipv6 address 3400:20:20:1000::253/64
+ip ospf 20 area 0
+no shut
+
+int f1/0
+no switchport
+ip address 10.1.0.10 255.255.255.252
+ipv6 address 3400:20:20:1000::10/64
+ip ospf 20 area 0
+no shut
+
+int f1/1
+no switchport
+ip address 10.1.0.18 255.255.255.252
+ipv6 address 3400:20:20:1000::18/64
+ip ospf 20 area 0
+no shut
+
+int f1/2
+no switchport
+ip address 10.1.0.22 255.255.255.252
+ipv6 address 3400:20:20:1000::22/64
+ip ospf 20 area 0
+no shut
+
+router ospf 10
+router-id 6.6.6.10
+default-information originate always
+
+router ospf 20
+router-id 6.6.6.6
+redistribute ospf 10 subnets
+passive-interface Vlan1
+passive-interface Vlan31
+passive-interface Vlan32
+passive-interface Vlan33
+exit
+
+end
+
+write
+

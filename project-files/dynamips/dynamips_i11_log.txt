@@ -1,0 +1,56 @@
+Jul 03 18:27:47.895 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jul 03 18:27:47.895 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 50650.
+Jul 03 18:27:48.387 HYPERVISOR: exec_cmd: hypervisor version 
+Jul 03 18:27:48.387 HYPERVISOR: exec_cmd: hypervisor working_dir D:\AR\AR-RE\project-files\dynamips 
+Jul 03 18:27:48.388 GENERAL: working_dir=D:\AR\AR-RE\project-files\dynamips
+Jul 03 18:27:48.389 HYPERVISOR: exec_cmd: hypervisor working_dir D:\AR\AR-RE\project-files\dynamips\3b36dea8-3313-4066-aac5-40ad5503136a 
+Jul 03 18:27:48.389 GENERAL: working_dir=D:\AR\AR-RE\project-files\dynamips\3b36dea8-3313-4066-aac5-40ad5503136a
+Jul 03 18:27:48.390 HYPERVISOR: exec_cmd: vm create D3 9 c3725 
+Jul 03 18:27:48.393 VM: VM D3 created.
+Jul 03 18:27:48.395 HYPERVISOR: exec_cmd: vm set_con_tcp_port D3 5009 
+Jul 03 18:27:48.395 HYPERVISOR: exec_cmd: c3725 get_mac_addr D3 
+Jul 03 18:27:48.396 HYPERVISOR: exec_cmd: vm set_disk0 D3 1 
+Jul 03 18:27:48.397 HYPERVISOR: exec_cmd: vm set_exec_area D3 64 
+Jul 03 18:27:48.398 HYPERVISOR: exec_cmd: vm get_status D3 
+Jul 03 18:27:48.399 HYPERVISOR: exec_cmd: vm set_idle_pc D3 0x60a6a1e0 
+Jul 03 18:27:48.401 HYPERVISOR: exec_cmd: vm set_ios D3 C:/Users/Goncalo Marques/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Jul 03 18:27:48.401 HYPERVISOR: exec_cmd: c3725 set_mac_addr D3 c209.350c.0000 
+Jul 03 18:27:48.401 HYPERVISOR: exec_cmd: vm set_nvram D3 256 
+Jul 03 18:27:48.402 HYPERVISOR: exec_cmd: vm get_status D3 
+Jul 03 18:27:48.402 HYPERVISOR: exec_cmd: vm slot_add_binding D3 1 0 NM-16ESW 
+Jul 03 18:27:59.387 HYPERVISOR: exec_cmd: nio create_udp udp-18f48c63-7b2c-44c4-b8de-225309b10cf9 10094 127.0.0.1 10095 
+Jul 03 18:27:59.939 HYPERVISOR: exec_cmd: vm slot_add_nio_binding D3 1 2 udp-18f48c63-7b2c-44c4-b8de-225309b10cf9 
+Jul 03 18:27:59.940 HYPERVISOR: exec_cmd: vm get_status D3 
+Jul 03 18:28:00.557 HYPERVISOR: exec_cmd: nio create_udp udp-12a68918-79a9-4e83-aa85-ac294ae48c46 10100 127.0.0.1 10101 
+Jul 03 18:28:00.559 HYPERVISOR: exec_cmd: vm slot_add_nio_binding D3 1 3 udp-12a68918-79a9-4e83-aa85-ac294ae48c46 
+Jul 03 18:28:00.559 HYPERVISOR: exec_cmd: vm get_status D3 
+Jul 03 18:28:00.825 HYPERVISOR: exec_cmd: nio create_udp udp-5e65cced-b7d5-4e79-82c5-01bf905555d4 10112 127.0.0.1 10113 
+Jul 03 18:28:00.826 HYPERVISOR: exec_cmd: vm slot_add_nio_binding D3 1 0 udp-5e65cced-b7d5-4e79-82c5-01bf905555d4 
+Jul 03 18:28:00.827 HYPERVISOR: exec_cmd: vm get_status D3 
+Jul 03 18:28:00.970 HYPERVISOR: exec_cmd: nio create_udp udp-176af9ba-de68-4490-bc60-ad5756df63eb 10124 127.0.0.1 10125 
+Jul 03 18:28:00.972 HYPERVISOR: exec_cmd: vm slot_add_nio_binding D3 1 1 udp-176af9ba-de68-4490-bc60-ad5756df63eb 
+Jul 03 18:28:00.972 HYPERVISOR: exec_cmd: vm get_status D3 
+Jul 03 18:29:53.056 HYPERVISOR: exec_cmd: vm create Ghost 0 c3725 
+Jul 03 18:29:53.056 VM: VM Ghost created.
+Jul 03 18:29:53.057 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/Goncalo Marques/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Jul 03 18:29:53.058 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jul 03 18:29:53.059 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\AR\AR-RE\project-files\dynamips\c3725-advipservicesk9-mz.124-21.image-128.ghost' 
+Jul 03 18:29:53.059 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jul 03 18:29:53.060 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jul 03 18:29:53.060 HYPERVISOR: exec_cmd: vm start Ghost 
+Jul 03 18:29:53.329 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jul 03 18:29:53.488 VM: VM Ghost shutdown.
+Jul 03 18:29:53.488 VM: VM Ghost destroyed.
+Jul 03 18:29:53.506 HYPERVISOR: exec_cmd: vm get_status D3 
+Jul 03 18:29:53.507 HYPERVISOR: exec_cmd: vm set_config D3 configs\i9_startup-config.cfg 
+Jul 03 18:29:53.507 HYPERVISOR: exec_cmd: vm start D3 
+Jul 03 18:44:23.981 HYPERVISOR: exec_cmd: vm extract_config D3 
+Jul 03 18:44:24.085 HYPERVISOR: exec_cmd: vm extract_config D3 
+Jul 03 18:49:24.002 HYPERVISOR: exec_cmd: vm extract_config D3 
+Jul 03 18:49:24.011 HYPERVISOR: exec_cmd: vm extract_config D3 
+Jul 03 18:51:24.001 HYPERVISOR: exec_cmd: vm extract_config D3 
+Jul 03 18:51:24.010 HYPERVISOR: exec_cmd: vm extract_config D3 
+Jul 03 18:54:21.970 HYPERVISOR: exec_cmd: vm get_status D3 
+Jul 03 18:54:21.971 HYPERVISOR: exec_cmd: vm stop D3 
+Jul 03 18:54:22.129 VM: VM D3 shutdown.
+Jul 03 18:54:22.129 HYPERVISOR: exec_cmd: vm extract_config D3 

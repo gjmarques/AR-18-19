@@ -1,0 +1,58 @@
+Jul 03 18:27:43.473 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jul 03 18:27:43.474 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 50619.
+Jul 03 18:27:43.954 HYPERVISOR: exec_cmd: hypervisor version 
+Jul 03 18:27:43.955 HYPERVISOR: exec_cmd: hypervisor working_dir D:\AR\AR-RE\project-files\dynamips 
+Jul 03 18:27:43.955 GENERAL: working_dir=D:\AR\AR-RE\project-files\dynamips
+Jul 03 18:27:43.955 HYPERVISOR: exec_cmd: hypervisor working_dir D:\AR\AR-RE\project-files\dynamips\b7aaea44-d8c2-4260-bdd8-8d7b1b669913 
+Jul 03 18:27:43.956 GENERAL: working_dir=D:\AR\AR-RE\project-files\dynamips\b7aaea44-d8c2-4260-bdd8-8d7b1b669913
+Jul 03 18:27:43.958 HYPERVISOR: exec_cmd: vm create O2 7 c7200 
+Jul 03 18:27:43.960 VM: VM O2 created.
+Jul 03 18:27:43.960 HYPERVISOR: exec_cmd: vm set_con_tcp_port O2 5016 
+Jul 03 18:27:43.961 HYPERVISOR: exec_cmd: c7200 get_mac_addr O2 
+Jul 03 18:27:43.961 HYPERVISOR: exec_cmd: vm get_status O2 
+Jul 03 18:27:43.961 HYPERVISOR: exec_cmd: vm slot_add_binding O2 0 0 C7200-IO-FE 
+Jul 03 18:27:43.962 HYPERVISOR: exec_cmd: vm set_disk0 O2 0 
+Jul 03 18:27:43.962 HYPERVISOR: exec_cmd: vm set_exec_area O2 64 
+Jul 03 18:27:43.963 HYPERVISOR: exec_cmd: vm get_status O2 
+Jul 03 18:27:43.963 HYPERVISOR: exec_cmd: vm set_idle_pc O2 0x601712a8 
+Jul 03 18:27:43.965 HYPERVISOR: exec_cmd: vm set_ios O2 C:/Users/Goncalo Marques/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jul 03 18:27:43.965 HYPERVISOR: exec_cmd: c7200 set_mac_addr O2 ca07.1398.0000 
+Jul 03 18:27:43.966 HYPERVISOR: exec_cmd: vm set_nvram O2 512 
+Jul 03 18:27:43.966 HYPERVISOR: exec_cmd: vm set_ram O2 512 
+Jul 03 18:27:43.967 HYPERVISOR: exec_cmd: vm get_status O2 
+Jul 03 18:27:43.967 HYPERVISOR: exec_cmd: vm slot_add_binding O2 1 0 PA-2FE-TX 
+Jul 03 18:27:43.967 HYPERVISOR: exec_cmd: vm get_status O2 
+Jul 03 18:27:43.967 HYPERVISOR: exec_cmd: vm slot_add_binding O2 2 0 PA-2FE-TX 
+Jul 03 18:27:57.046 HYPERVISOR: exec_cmd: nio create_udp udp-5f4a7b1c-f984-412a-bda0-6f19d9cea3d1 10036 127.0.0.1 10037 
+Jul 03 18:27:57.570 HYPERVISOR: exec_cmd: vm slot_add_nio_binding O2 0 0 udp-5f4a7b1c-f984-412a-bda0-6f19d9cea3d1 
+Jul 03 18:27:57.570 HYPERVISOR: exec_cmd: vm get_status O2 
+Jul 03 18:27:58.862 HYPERVISOR: exec_cmd: nio create_udp udp-52bf8741-b709-4acc-86e2-97033e61357d 10052 127.0.0.1 10053 
+Jul 03 18:27:58.865 HYPERVISOR: exec_cmd: vm slot_add_nio_binding O2 1 0 udp-52bf8741-b709-4acc-86e2-97033e61357d 
+Jul 03 18:27:58.865 HYPERVISOR: exec_cmd: vm get_status O2 
+Jul 03 18:27:58.938 HYPERVISOR: exec_cmd: nio create_udp udp-764fa746-6761-4660-8966-ead2040e1f98 10058 127.0.0.1 10059 
+Jul 03 18:27:58.941 HYPERVISOR: exec_cmd: vm slot_add_nio_binding O2 1 1 udp-764fa746-6761-4660-8966-ead2040e1f98 
+Jul 03 18:27:58.941 HYPERVISOR: exec_cmd: vm get_status O2 
+Jul 03 18:28:01.383 HYPERVISOR: exec_cmd: nio create_udp udp-d8d6b396-f4dd-4d25-8ef3-ae73aecd8f60 10150 127.0.0.1 10151 
+Jul 03 18:28:01.385 HYPERVISOR: exec_cmd: vm slot_add_nio_binding O2 2 0 udp-d8d6b396-f4dd-4d25-8ef3-ae73aecd8f60 
+Jul 03 18:28:01.385 HYPERVISOR: exec_cmd: vm get_status O2 
+Jul 03 18:29:48.735 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jul 03 18:29:48.735 VM: VM Ghost created.
+Jul 03 18:29:48.736 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/Goncalo Marques/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jul 03 18:29:48.737 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jul 03 18:29:48.738 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\AR\AR-RE\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jul 03 18:29:48.738 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jul 03 18:29:49.111 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jul 03 18:29:49.119 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jul 03 18:29:49.119 HYPERVISOR: exec_cmd: vm start Ghost 
+Jul 03 18:29:49.142 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jul 03 18:29:49.377 VM: VM Ghost shutdown.
+Jul 03 18:29:49.377 VM: VM Ghost destroyed.
+Jul 03 18:29:49.401 HYPERVISOR: exec_cmd: vm get_status O2 
+Jul 03 18:29:49.402 HYPERVISOR: exec_cmd: vm set_config O2 configs\i7_startup-config.cfg configs\i7_private-config.cfg 
+Jul 03 18:29:49.402 HYPERVISOR: exec_cmd: vm start O2 
+Jul 03 18:30:19.900 HYPERVISOR: exec_cmd: vm extract_config O2 
+Jul 03 18:30:49.903 HYPERVISOR: exec_cmd: vm extract_config O2 
+Jul 03 18:54:20.228 HYPERVISOR: exec_cmd: vm get_status O2 
+Jul 03 18:54:20.230 HYPERVISOR: exec_cmd: vm stop O2 
+Jul 03 18:54:21.295 VM: VM O2 shutdown.
+Jul 03 18:54:21.299 HYPERVISOR: exec_cmd: vm extract_config O2 

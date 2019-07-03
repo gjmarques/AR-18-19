@@ -1,0 +1,12 @@
+Jul 03 18:27:52.248 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jul 03 18:27:52.248 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 50679.
+Jul 03 18:27:52.740 HYPERVISOR: exec_cmd: hypervisor version 
+Jul 03 18:27:52.741 HYPERVISOR: exec_cmd: hypervisor working_dir D:\AR\AR-RE\project-files\dynamips 
+Jul 03 18:27:52.742 GENERAL: working_dir=D:\AR\AR-RE\project-files\dynamips
+Jul 03 18:27:52.742 HYPERVISOR: exec_cmd: ethsw create Ethernetswitch-6 
+Jul 03 18:28:04.145 HYPERVISOR: exec_cmd: nio create_udp udp-2d8059a7-ff3f-45cd-ac08-65f8644bb6e5 10185 127.0.0.1 10184 
+Jul 03 18:28:04.146 HYPERVISOR: exec_cmd: ethsw add_nio Ethernetswitch-6 udp-2d8059a7-ff3f-45cd-ac08-65f8644bb6e5 
+Jul 03 18:28:04.155 HYPERVISOR: exec_cmd: ethsw set_dot1q_port Ethernetswitch-6 udp-2d8059a7-ff3f-45cd-ac08-65f8644bb6e5 1 
+Jul 03 18:28:04.231 HYPERVISOR: exec_cmd: nio create_udp udp-5b82dc7a-dc21-46e7-b8e1-acb587c3f56e 10188 127.0.0.1 10189 
+Jul 03 18:28:04.231 HYPERVISOR: exec_cmd: ethsw add_nio Ethernetswitch-6 udp-5b82dc7a-dc21-46e7-b8e1-acb587c3f56e 
+Jul 03 18:28:04.238 HYPERVISOR: exec_cmd: ethsw set_access_port Ethernetswitch-6 udp-5b82dc7a-dc21-46e7-b8e1-acb587c3f56e 52 

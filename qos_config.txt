@@ -1,0 +1,83 @@
+ ------------------DISTRIBUTION 1 - 4-----------------
+
+access-list 131 permit ip 10.1.31.0 0.0.0.255 any
+access-list 132 permit ip 10.1.32.0 0.0.0.255 any
+access-list 133 permit ip 10.1.33.0 0.0.0.255 any
+class-map match-all EF
+match access-group 131
+class-map match-all AF11
+match access-group 132
+class-map match-all AF23
+match access-group 133
+
+policy-map SETDSCP
+class EF
+set ip dscp 46
+class AF11
+set ip dscp 10
+class AF23
+set ip dscp 22
+
+int vlan 31
+service-policy input SETDSCP
+
+int vlan 32
+service-policy input SETDSCP
+
+int vlan 33
+service-policy input SETDSCP
+
+
+class-map match-all PREMIUM
+match ip dscp 46
+class-map match-all GOLD
+match ip dscp 10
+class-map match-all SILVER
+match ip dscp 22
+class-map match-all BEST-EFFORT
+match ip dscp 0
+
+
+
+policy-map EDGE
+class PREMIUM
+priority percent 40
+class GOLD
+bandwidth percent 20
+class SILVER
+bandwidth percent 15
+class BEST-EFFORT
+police 16000 2000 2000 conform-action set-dscp-transmit 0 
+
+int vlan 40
+service-policy output EDGE 
+
+
+ ------------------CORE 1 - 2-----------------
+
+class-map match-all PREMIUM
+match ip dscp 46
+class-map match-all GOLD
+match ip dscp 10
+class-map match-all SILVER
+match ip dscp 22
+class-map match-all BEST-EFFORT
+match ip dscp 0
+
+
+policy-map EDGE
+class PREMIUM
+priority percent 40
+class GOLD
+bandwidth percent 20
+class SILVER
+bandwidth percent 15
+class BEST-EFFORT
+police 16000 2000 2000 conform-action set-dscp-transmit 0 
+
+int f1/0
+service-policy output EDGE 
+int f1/1
+service-policy output EDGE 
+int f1/2
+service-policy output EDGE 

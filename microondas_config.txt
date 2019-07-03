@@ -1,0 +1,46 @@
+---------------------MICROONDAS OEIRAS-----------------------
+
+conf t
+
+int f1/0
+ip address 10.1.0.21 255.255.255.252
+ip ospf 20 area 0
+no shut
+
+int f1/1
+ip address 10.1.0.25 255.255.255.252
+ip ospf 20 area 0
+no shut
+
+int f0/0
+ip address 100.0.0.1 255.255.255.0
+no shut
+
+access-list 101 permit ip 10.1.51.0 0.0.0.255 10.2.52.0 0.0.0.255
+route-map ForceRouting permit 10
+match ip address 101
+set ip next-hop 100.0.0.2
+
+ip route 10.2.52.0 255.255.255.0 100.0.0.2
+
+end
+write
+
+
+---------------------MICROONDAS LISBOA-----------------------
+
+conf t
+
+int f1/0
+ip address 10.2.0.2 255.255.255.252
+ip ospf 20 area 0
+no sh
+
+int f0/0
+ip address 100.0.0.2 255.255.255.0
+no shut
+
+ip route 10.1.51.0 255.255.255.0 100.0.0.1
+
+end
+write

@@ -1,0 +1,76 @@
+Jun 27 15:07:30.901 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jun 27 15:07:30.901 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 59849.
+Jun 27 15:07:31.394 HYPERVISOR: exec_cmd: hypervisor version 
+Jun 27 15:07:31.394 HYPERVISOR: exec_cmd: hypervisor working_dir D:\AR\AR-RE\project-files\dynamips 
+Jun 27 15:07:31.394 GENERAL: working_dir=D:\AR\AR-RE\project-files\dynamips
+Jun 27 15:07:31.394 HYPERVISOR: exec_cmd: hypervisor working_dir D:\AR\AR-RE\project-files\dynamips\5f3c6239-c0a4-47ea-b765-2e0e96784bf1 
+Jun 27 15:07:31.394 GENERAL: working_dir=D:\AR\AR-RE\project-files\dynamips\5f3c6239-c0a4-47ea-b765-2e0e96784bf1
+Jun 27 15:07:31.394 HYPERVISOR: exec_cmd: vm create A_D4 6 c3725 
+Jun 27 15:07:31.404 VM: VM A_D4 created.
+Jun 27 15:07:31.404 HYPERVISOR: exec_cmd: vm set_con_tcp_port A_D4 5008 
+Jun 27 15:07:31.404 HYPERVISOR: exec_cmd: c3725 get_mac_addr A_D4 
+Jun 27 15:07:31.404 HYPERVISOR: exec_cmd: vm set_disk0 A_D4 1 
+Jun 27 15:07:31.405 HYPERVISOR: exec_cmd: vm set_exec_area A_D4 64 
+Jun 27 15:07:31.405 HYPERVISOR: exec_cmd: vm get_status A_D4 
+Jun 27 15:07:31.405 HYPERVISOR: exec_cmd: vm set_idle_pc A_D4 0x60a6a1e0 
+Jun 27 15:07:31.406 HYPERVISOR: exec_cmd: vm set_ios A_D4 C:/Users/Goncalo Marques/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Jun 27 15:07:31.406 HYPERVISOR: exec_cmd: c3725 set_mac_addr A_D4 c206.2604.0000 
+Jun 27 15:07:31.406 HYPERVISOR: exec_cmd: vm set_nvram A_D4 256 
+Jun 27 15:07:31.407 HYPERVISOR: exec_cmd: vm get_status A_D4 
+Jun 27 15:07:31.407 HYPERVISOR: exec_cmd: vm slot_add_binding A_D4 1 0 NM-16ESW 
+Jun 27 15:07:31.408 HYPERVISOR: exec_cmd: vm set_con_tcp_port A_D4 5008 
+Jun 27 15:07:37.902 HYPERVISOR: exec_cmd: nio create_udp udp-a575f030-13f4-45ea-bf67-b0f0c1cd533a 10036 127.0.0.1 10037 
+Jun 27 15:07:38.456 HYPERVISOR: exec_cmd: vm slot_add_nio_binding A_D4 1 0 udp-a575f030-13f4-45ea-bf67-b0f0c1cd533a 
+Jun 27 15:07:38.457 HYPERVISOR: exec_cmd: vm get_status A_D4 
+Jun 27 15:07:38.691 HYPERVISOR: exec_cmd: nio create_udp udp-e962db36-80b5-413c-8e45-bb5c949a90cf 10060 127.0.0.1 10061 
+Jun 27 15:07:38.693 HYPERVISOR: exec_cmd: vm slot_add_nio_binding A_D4 1 1 udp-e962db36-80b5-413c-8e45-bb5c949a90cf 
+Jun 27 15:07:38.693 HYPERVISOR: exec_cmd: vm get_status A_D4 
+Jun 27 15:07:38.802 HYPERVISOR: exec_cmd: nio create_udp udp-dcbbc59b-018a-4941-b4a2-069b5e24e52c 10072 127.0.0.1 10073 
+Jun 27 15:07:38.804 HYPERVISOR: exec_cmd: vm slot_add_nio_binding A_D4 1 2 udp-dcbbc59b-018a-4941-b4a2-069b5e24e52c 
+Jun 27 15:07:38.804 HYPERVISOR: exec_cmd: vm get_status A_D4 
+Jun 27 15:07:39.215 HYPERVISOR: exec_cmd: nio create_udp udp-41ce9861-2938-47e4-9258-c4e5b7aa30fc 10096 127.0.0.1 10097 
+Jun 27 15:07:39.216 HYPERVISOR: exec_cmd: vm slot_add_nio_binding A_D4 1 3 udp-41ce9861-2938-47e4-9258-c4e5b7aa30fc 
+Jun 27 15:07:39.217 HYPERVISOR: exec_cmd: vm get_status A_D4 
+Jun 27 15:07:39.384 HYPERVISOR: exec_cmd: nio create_udp udp-e4effe3c-a09b-44f8-8bd9-8f7b467714d5 10104 127.0.0.1 10105 
+Jun 27 15:07:39.386 HYPERVISOR: exec_cmd: vm slot_add_nio_binding A_D4 1 4 udp-e4effe3c-a09b-44f8-8bd9-8f7b467714d5 
+Jun 27 15:07:39.386 HYPERVISOR: exec_cmd: vm get_status A_D4 
+Jun 27 16:54:58.906 HYPERVISOR: exec_cmd: vm create Ghost 0 c3725 
+Jun 27 16:54:58.907 VM: VM Ghost created.
+Jun 27 16:54:58.908 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/Goncalo Marques/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Jun 27 16:54:58.908 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jun 27 16:54:58.908 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\AR\AR-RE\project-files\dynamips\c3725-advipservicesk9-mz.124-21.image-128.ghost' 
+Jun 27 16:54:58.908 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jun 27 16:54:58.909 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jun 27 16:54:58.909 HYPERVISOR: exec_cmd: vm start Ghost 
+Jun 27 16:54:59.188 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jun 27 16:54:59.346 VM: VM Ghost shutdown.
+Jun 27 16:54:59.346 VM: VM Ghost destroyed.
+Jun 27 16:54:59.355 HYPERVISOR: exec_cmd: vm get_status A_D4 
+Jun 27 16:54:59.356 HYPERVISOR: exec_cmd: vm set_config A_D4 configs\i6_startup-config.cfg 
+Jun 27 16:54:59.356 HYPERVISOR: exec_cmd: vm start A_D4 
+Jun 27 16:55:53.488 HYPERVISOR: exec_cmd: vm get_status A_D4 
+Jun 27 16:55:53.489 HYPERVISOR: exec_cmd: vm stop A_D4 
+Jun 27 16:55:53.720 VM: VM A_D4 shutdown.
+Jun 27 16:55:53.720 HYPERVISOR: exec_cmd: vm extract_config A_D4 
+Jun 27 16:56:26.451 HYPERVISOR: exec_cmd: vm get_status A_D4 
+Jun 27 16:56:26.451 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding A_D4 1 0 
+Jun 27 16:56:26.452 HYPERVISOR: exec_cmd: nio delete udp-a575f030-13f4-45ea-bf67-b0f0c1cd533a 
+Jun 27 16:56:26.693 HYPERVISOR: exec_cmd: vm get_status A_D4 
+Jun 27 16:56:26.693 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding A_D4 1 1 
+Jun 27 16:56:26.694 HYPERVISOR: exec_cmd: nio delete udp-e962db36-80b5-413c-8e45-bb5c949a90cf 
+Jun 27 16:56:26.730 HYPERVISOR: exec_cmd: vm get_status A_D4 
+Jun 27 16:56:26.731 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding A_D4 1 2 
+Jun 27 16:56:26.732 HYPERVISOR: exec_cmd: nio delete udp-dcbbc59b-018a-4941-b4a2-069b5e24e52c 
+Jun 27 16:56:26.765 HYPERVISOR: exec_cmd: vm get_status A_D4 
+Jun 27 16:56:26.765 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding A_D4 1 3 
+Jun 27 16:56:26.765 HYPERVISOR: exec_cmd: nio delete udp-41ce9861-2938-47e4-9258-c4e5b7aa30fc 
+Jun 27 16:56:26.808 HYPERVISOR: exec_cmd: vm get_status A_D4 
+Jun 27 16:56:26.808 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding A_D4 1 4 
+Jun 27 16:56:26.809 HYPERVISOR: exec_cmd: nio delete udp-e4effe3c-a09b-44f8-8bd9-8f7b467714d5 
+Jun 27 16:56:26.977 HYPERVISOR: exec_cmd: vm get_status A_D4 
+Jun 27 16:56:26.978 HYPERVISOR: exec_cmd: vm extract_config A_D4 
+Jun 27 16:56:26.988 HYPERVISOR: exec_cmd: vm delete A_D4 
+Jun 27 16:56:26.988 VM: VM A_D4 destroyed.
+Jun 27 16:56:27.000 HYPERVISOR: exec_cmd: hypervisor stop 
+Jun 27 16:56:27.440 HYPERVISOR: Stopped.
+Jun 27 16:56:27.440 GENERAL: reset done.

@@ -1,0 +1,50 @@
+Jul 03 18:27:46.777 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jul 03 18:27:46.777 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 50644.
+Jul 03 18:27:47.269 HYPERVISOR: exec_cmd: hypervisor version 
+Jul 03 18:27:47.270 HYPERVISOR: exec_cmd: hypervisor working_dir D:\AR\AR-RE\project-files\dynamips 
+Jul 03 18:27:47.270 GENERAL: working_dir=D:\AR\AR-RE\project-files\dynamips
+Jul 03 18:27:47.271 HYPERVISOR: exec_cmd: hypervisor working_dir D:\AR\AR-RE\project-files\dynamips\12633af9-f184-41ea-81d8-4684b2c72b65 
+Jul 03 18:27:47.271 GENERAL: working_dir=D:\AR\AR-RE\project-files\dynamips\12633af9-f184-41ea-81d8-4684b2c72b65
+Jul 03 18:27:47.273 HYPERVISOR: exec_cmd: vm create SWL3_A 5 c3725 
+Jul 03 18:27:47.275 VM: VM SWL3_A created.
+Jul 03 18:27:47.277 HYPERVISOR: exec_cmd: vm set_con_tcp_port SWL3_A 5007 
+Jul 03 18:27:47.277 HYPERVISOR: exec_cmd: c3725 get_mac_addr SWL3_A 
+Jul 03 18:27:47.278 HYPERVISOR: exec_cmd: vm set_disk0 SWL3_A 1 
+Jul 03 18:27:47.279 HYPERVISOR: exec_cmd: vm set_exec_area SWL3_A 64 
+Jul 03 18:27:47.280 HYPERVISOR: exec_cmd: vm get_status SWL3_A 
+Jul 03 18:27:47.281 HYPERVISOR: exec_cmd: vm set_idle_pc SWL3_A 0x60a6a1e0 
+Jul 03 18:27:47.283 HYPERVISOR: exec_cmd: vm set_ios SWL3_A C:/Users/Goncalo Marques/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Jul 03 18:27:47.284 HYPERVISOR: exec_cmd: c3725 set_mac_addr SWL3_A c205.47d8.0000 
+Jul 03 18:27:47.285 HYPERVISOR: exec_cmd: vm set_nvram SWL3_A 256 
+Jul 03 18:27:47.287 HYPERVISOR: exec_cmd: vm get_status SWL3_A 
+Jul 03 18:27:47.287 HYPERVISOR: exec_cmd: vm slot_add_binding SWL3_A 1 0 NM-16ESW 
+Jul 03 18:27:54.415 HYPERVISOR: exec_cmd: nio create_udp udp-76a90ac4-1f7b-4983-ad8c-cc5b46cc5274 10008 127.0.0.1 10009 
+Jul 03 18:27:54.967 HYPERVISOR: exec_cmd: vm slot_add_nio_binding SWL3_A 0 1 udp-76a90ac4-1f7b-4983-ad8c-cc5b46cc5274 
+Jul 03 18:27:54.967 HYPERVISOR: exec_cmd: vm get_status SWL3_A 
+Jul 03 18:27:55.026 HYPERVISOR: exec_cmd: nio create_udp udp-84f3ef1f-d493-4d1d-b820-96e75a2a8d91 10012 127.0.0.1 10013 
+Jul 03 18:27:55.028 HYPERVISOR: exec_cmd: vm slot_add_nio_binding SWL3_A 1 14 udp-84f3ef1f-d493-4d1d-b820-96e75a2a8d91 
+Jul 03 18:27:55.028 HYPERVISOR: exec_cmd: vm get_status SWL3_A 
+Jul 03 18:27:55.110 HYPERVISOR: exec_cmd: nio create_udp udp-92310fa6-8e40-4c38-9b9f-c6d38759394a 10016 127.0.0.1 10017 
+Jul 03 18:27:55.112 HYPERVISOR: exec_cmd: vm slot_add_nio_binding SWL3_A 1 15 udp-92310fa6-8e40-4c38-9b9f-c6d38759394a 
+Jul 03 18:27:55.112 HYPERVISOR: exec_cmd: vm get_status SWL3_A 
+Jul 03 18:28:01.109 HYPERVISOR: exec_cmd: nio create_udp udp-11cb0998-9997-4325-95ca-cd7acce117a7 10134 127.0.0.1 10135 
+Jul 03 18:28:01.111 HYPERVISOR: exec_cmd: vm slot_add_nio_binding SWL3_A 0 0 udp-11cb0998-9997-4325-95ca-cd7acce117a7 
+Jul 03 18:28:01.111 HYPERVISOR: exec_cmd: vm get_status SWL3_A 
+Jul 03 18:29:52.181 HYPERVISOR: exec_cmd: vm create Ghost 0 c3725 
+Jul 03 18:29:52.182 VM: VM Ghost created.
+Jul 03 18:29:52.183 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/Goncalo Marques/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Jul 03 18:29:52.183 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jul 03 18:29:52.183 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\AR\AR-RE\project-files\dynamips\c3725-advipservicesk9-mz.124-21.image-128.ghost' 
+Jul 03 18:29:52.183 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jul 03 18:29:52.184 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jul 03 18:29:52.184 HYPERVISOR: exec_cmd: vm start Ghost 
+Jul 03 18:29:52.448 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jul 03 18:29:52.605 VM: VM Ghost shutdown.
+Jul 03 18:29:52.605 VM: VM Ghost destroyed.
+Jul 03 18:29:52.615 HYPERVISOR: exec_cmd: vm get_status SWL3_A 
+Jul 03 18:29:52.616 HYPERVISOR: exec_cmd: vm set_config SWL3_A configs\i5_startup-config.cfg 
+Jul 03 18:29:52.617 HYPERVISOR: exec_cmd: vm start SWL3_A 
+Jul 03 18:54:21.834 HYPERVISOR: exec_cmd: vm get_status SWL3_A 
+Jul 03 18:54:21.835 HYPERVISOR: exec_cmd: vm stop SWL3_A 
+Jul 03 18:54:22.025 VM: VM SWL3_A shutdown.
+Jul 03 18:54:22.027 HYPERVISOR: exec_cmd: vm extract_config SWL3_A 
