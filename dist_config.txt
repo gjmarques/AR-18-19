@@ -30,12 +30,14 @@ int vlan 1
 ip add 10.1.1.1 255.255.255.0
 ipv6 address 3400:20:20:1100::1/64
 ip ospf 20 area 0
+ipv6 ospf 2 area 0
 no autostate
 
 int vlan 40
 ip add 10.1.40.1 255.255.255.0
 ipv6 address 3400:20:20:1400::1/64
 ip ospf 20 area 0
+ipv6 ospf 2 area 0
 no autostate
 
 int vlan 51
@@ -52,18 +54,21 @@ int vlan 31
 ip add 10.1.31.1 255.255.255.0
 ipv6 address 3400:20:20:1310::1/64
 ip ospf 20 area 0
+ipv6 ospf 2 area 0
 no autostate
 
 int vlan 32
 ip add 10.1.32.1 255.255.255.0
 ipv6 address 3400:20:20:1320::1/64
 ip ospf 20 area 0
+ipv6 ospf 2 area 0
 no autostate
 
 int vlan 33
 ip add 10.1.33.1 255.255.255.0
 ipv6 address 3400:20:20:1330::1/64
 ip ospf 20 area 0
+ipv6 ospf 2 area 0
 no autostate
 
 interface range f1/0 - 1
