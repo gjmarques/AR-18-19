@@ -64,9 +64,9 @@ no shut
 
 
 ipv6 access-list L101
-sequence 20 permit ipv6 3400:20:20:1520::/64 3400:20:20:2510::/64
+sequence 20 permit ipv6 3400:20:20:2520::/64 3400:20:20:1510::/64
 ipv6 access-list L102
-sequence 20 permit ipv6 3400:20:20:1520::/64 3400:20:20:2530::/64
+sequence 20 permit ipv6 3400:20:20:2520::/64 3400:20:20:1530::/64
 access-list 101 permit ip 10.2.52.0 0.0.0.255 10.1.51.0 0.0.0.255
 access-list 102 permit ip 10.2.52.0 0.0.0.255 10.1.53.0 0.0.0.255
 
@@ -106,7 +106,7 @@ ip ospf 20 area 0
 no shexi
 
 int f0/0
-ipv6 2000:1:1:1::2/64  
+ipv6 2000:1:1:1::2/126 
 ip address 100.0.0.2 255.255.255.0
 no shut
 

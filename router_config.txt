@@ -181,17 +181,17 @@ router ospf 20
 passive-interface Vlan52
 
 ipv6 access-list L101
-sequence 20 permit ipv6 3400:20:20:1520::/64 3400:20:20:2510::/64
+sequence 20 permit ipv6 3400:20:20:2520::/64 3400:20:20:1510::/64
 ipv6 access-list L102
-sequence 20 permit ipv6 3400:20:20:1520::/64 3400:20:20:2530::/64
+sequence 20 permit ipv6 3400:20:20:2520::/64 3400:20:20:1530::/64
 
 route-map route6T1 permit 10
  match ipv6 address L101
- set ipv6 next-hop 3400:20:20:1210::1
+ set ipv6 next-hop 3400:20:20:2000::2
 
 route-map route6T1 permit 20
  match ipv6 address L102
- set ipv6 next-hop 3400:20:20:1230::1
+ set ipv6 next-hop 3400:20:20:2000::2
 
 
 access-list 1 permit 10.2.0.0 0.0.255.255
