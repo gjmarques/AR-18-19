@@ -313,6 +313,7 @@ passive-interface Vlan1
 passive-interface Vlan31
 passive-interface Vlan32
 passive-interface Vlan33
+passive-interface Vlan53
 passive-interface Vlan60
 exit
 

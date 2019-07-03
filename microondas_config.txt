@@ -30,6 +30,26 @@ ip address 10.1.0.21 255.255.255.252
 ip ospf 20 area 0
 no shut
 
+interface Loopback0
+ ip address 10.20.1.3 255.255.255.0
+ ip ospf 20 area 0
+
+
+int tunnel 0
+ip unnumbered loopback 0
+tunnel source 10.20.1.3
+tunnel destination 10.20.1.1
+tunnel mode ipip
+
+
+
+int tunnel 1
+ip unnumbered loopback 0
+tunnel source 10.20.1.3
+tunnel destination 10.20.1.2
+tunnel mode ipip
+
+
 int f1/1
 ip address 10.1.0.25 255.255.255.252
 ip ospf 20 area 0
