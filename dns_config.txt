@@ -55,7 +55,6 @@ zone "1.1.10.in-addr.arpa" in{
 
 /etc/bind/db.10.0.1.rev
 $TTL 604800
-<<<<<<< HEAD
 $ORIGIN 1.1.10.in-addr.arpa.
 @ IN SOA ns1.Money4US.pt. adm.Money4US.pt. (
     2           ; Serial
@@ -71,19 +70,3 @@ $ORIGIN 1.1.10.in-addr.arpa.
 4       IN  PTR     v1d4.Money4US.pt.
 5       IN  PTR     v1c1.Money4US.pt. 
 6       IN  PTR     v1c2.Money4US.pt.
-=======
-$ORIGIN Money4US.com.
-@   IN  SOA ns1.Money4US.com. adm.Money4US.com. (
-                            2 ; Serial
-                            604800 ; Refresh
-                            86400 ; Retry
-                            2419200 ; Expire
-                            604800 ) ; Negative Cache TTL
-    IN  NS  ns1.Money4US.com.
-    IN  A   10.1.0.254
-v1sw1   IN  A   10.1.1.1
-@   IN  MX  10  server1
-ns1 IN  A   10.1.0.254
-server1 IN A 10.1.0.254
-server2 IN CNAME server1
->>>>>>> 6bb006d037a4152e23d67b49b2db2c17694eb31d
