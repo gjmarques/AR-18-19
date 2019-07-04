@@ -4,11 +4,27 @@ conf t
 
 crypto isakmp policy 30 
 authentication pre-share 
-crypto isakmp key ipsecLisboa address 220.0.0.3
+crypto isakmp key ipsecLisboa address    220.0.0.3
 crypto isakmp key ipsecNovaYork address 220.0.0.4
+crypto isakmp key ipv6secLisboa address ipv6 2000::3/64
+crypto isakmp key ipv6secNovaYork address ipv6 2000::4/64
 crypto ipsec transform-set cipherT esp-des 
 crypto ipsec profile ipsecL
 set transform-set cipherT
+
+interface tunnel 30
+ip unnumbered f2/0
+tunnel source 2000::1
+tunnel destination address  2000::3
+tunnel mode ipsec ipv6
+tunnel protection ipsec profile ipsecL
+
+interface tunnel 40
+ip unnumbered f2/0
+tunnel source 2000::1
+tunnel destination address 2000::4
+tunnel mode ipsec ipv6
+tunnel protection ipsec profile ipsecL
 
 interface Tunnel 10
 ip unnumbered f2/0
@@ -21,6 +37,24 @@ access-list 110 permit ip 10.1.60.0 0.0.0.255 10.2.0.0 0.0.255.255
 route-map route-ipsec permit 10
 match ip address 110
 set interface tunnel 10
+
+
+ipv6 access-list L101
+sequence 20 permit ipv6 3400:20:20:1600::/64 3400:20:20:2::/22
+
+
+route-map route6ipsec permit 10
+match ipv6 address L101
+set interface tunnel 30
+
+
+ipv6 access-list L102
+sequence 20 permit ipv6 3400:20:20:1600::/64 3400:20:20:3::/22
+
+
+route-map route6ipsec permit 20
+match ipv6 address L102
+set interface tunnel 40
 
 interface Tunnel 20
 ip unnumbered f2/0
@@ -44,11 +78,19 @@ conf t
 
 crypto isakmp policy 30 
 authentication pre-share 
-no crypto isakmp key labcom address 220.0.0.1
 crypto isakmp key ipsecLisboa address 220.0.0.1
+crypto isakmp key ipv6secLisboa address ipv6 2000::1/64
 crypto ipsec transform-set cipherT esp-des 
 crypto ipsec profile ipsecL
 set transform-set cipherT
+
+
+interface tunnel 30
+ip unnumbered f2/0
+tunnel source 2000::3
+tunnel destination address 2000::1
+tunnel mode ipsec ipv6
+tunnel protection ipsec profile ipsecL
 
 interface Tunnel 10
 ip unnumbered f0/0
@@ -62,6 +104,15 @@ route-map ForceRouting permit 20
 match ip address 110
 set interface tunnel 10
 
+ipv6 access-list L101
+sequence 20 permit ipv6 3400:20:20:2::/22 3400:20:20:1600::/64
+
+
+route-map route6ipsec permit 10
+match ipv6 address L101
+set interface tunnel 30
+
+
 
 ip policy route-map ForceRouting
 
@@ -74,9 +125,18 @@ conf t
 crypto isakmp policy 30 
 authentication pre-share
 crypto isakmp key ipsecNovaYork address 220.0.0.1
+crypto isakmp key ipv6secNovaYork address ipv6 2000::1/64
 crypto ipsec transform-set cipherT esp-des 
 crypto ipsec profile ipsecL
 set transform-set cipherT
+
+
+interface tunnel 40
+ip unnumbered f0/0
+tunnel source 2000::4
+tunnel destination 2000::1/64
+tunnel mode ipsec ipv6
+tunnel protection ipsec profile ipsecL
 
 interface Tunnel 20
 ip unnumbered f0/0
@@ -91,5 +151,12 @@ match ip address 110
 set interface tunnel 20
 
 
+ipv6 access-list L101
+sequence 20 permit ipv6 3400:20:20:3::/22 3400:20:20:1600::/64
+
+
+route-map route6ipsec permit 10
+match ipv6 address L101
+set interface tunnel 40
 
 ip policy route-map route-ipsec

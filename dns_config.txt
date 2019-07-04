@@ -17,16 +17,16 @@ zone "Money4US.com" in{
 
 $TTL 604800
 $ORIGIN Money4US.com.
-@ IN SOA ns1.Money4US.com. adm.Money4US.com. (
+@   IN  SOA ns1.Money4US.com. adm.Money4US.com. (
                             2 ; Serial
                             604800 ; Refresh
                             86400 ; Retry
                             2419200 ; Expire
                             604800 ) ; Negative Cache TTL
-IN NS ns1.Money4US.com.
-IN A 10.1.0.254
-v1sw1 IN A 10.1.1.1
-@ IN MX 10 server1
-ns1 IN A 10.1.0.254
+    IN  NS  ns1.Money4US.com.
+    IN  A   10.1.0.254
+v1sw1   IN  A   10.1.1.1
+@   IN  MX  10  server1
+ns1 IN  A   10.1.0.254
 server1 IN A 10.1.0.254
 server2 IN CNAME server1

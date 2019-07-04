@@ -1551,7 +1551,7 @@
         "nodes": [
             {
                 "compute_id": "local",
-                "console": 5000,
+                "console": 5017,
                 "console_type": "telnet",
                 "first_port_name": null,
                 "height": 32,
@@ -1630,7 +1630,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5001,
+                "console": 5018,
                 "console_type": "telnet",
                 "first_port_name": null,
                 "height": 32,
@@ -1709,7 +1709,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5016,
+                "console": 5019,
                 "console_type": "telnet",
                 "first_port_name": null,
                 "height": 45,
@@ -1773,7 +1773,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5017,
+                "console": 5020,
                 "console_type": "telnet",
                 "first_port_name": null,
                 "height": 45,
@@ -1837,7 +1837,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5018,
+                "console": 5021,
                 "console_type": "telnet",
                 "first_port_name": null,
                 "height": 59,
@@ -1862,7 +1862,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5020,
+                "console": 5023,
                 "console_type": "telnet",
                 "first_port_name": null,
                 "height": 59,
@@ -1887,7 +1887,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5022,
+                "console": 5025,
                 "console_type": "telnet",
                 "first_port_name": null,
                 "height": 59,
@@ -1912,7 +1912,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5024,
+                "console": 5027,
                 "console_type": "telnet",
                 "first_port_name": null,
                 "height": 59,
@@ -1937,7 +1937,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5026,
+                "console": 5029,
                 "console_type": "telnet",
                 "first_port_name": null,
                 "height": 48,
@@ -1989,7 +1989,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5027,
+                "console": 5030,
                 "console_type": "telnet",
                 "first_port_name": null,
                 "height": 48,
@@ -2041,7 +2041,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5028,
+                "console": 5031,
                 "console_type": "telnet",
                 "first_port_name": null,
                 "height": 48,
@@ -2093,7 +2093,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5029,
+                "console": 5032,
                 "console_type": "telnet",
                 "first_port_name": null,
                 "height": 48,
@@ -2145,7 +2145,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5025,
+                "console": 5033,
                 "console_type": "telnet",
                 "first_port_name": null,
                 "height": 48,
@@ -2353,7 +2353,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5006,
+                "console": 5000,
                 "console_type": "telnet",
                 "first_port_name": null,
                 "height": 32,
@@ -2483,7 +2483,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5014,
+                "console": 5003,
                 "console_type": "telnet",
                 "first_port_name": null,
                 "height": 32,
@@ -2623,7 +2623,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5019,
+                "console": 5004,
                 "console_type": "telnet",
                 "first_port_name": null,
                 "height": 45,
@@ -2687,7 +2687,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5021,
+                "console": 5005,
                 "console_type": "telnet",
                 "first_port_name": null,
                 "height": 48,
@@ -2739,7 +2739,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5032,
+                "console": 5006,
                 "console_type": "telnet",
                 "first_port_name": null,
                 "height": 45,
@@ -2803,7 +2803,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5023,
+                "console": 5007,
                 "console_type": "telnet",
                 "first_port_name": null,
                 "height": 32,
@@ -2881,7 +2881,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5033,
+                "console": 5013,
                 "console_type": "telnet",
                 "first_port_name": "",
                 "height": 59,
