@@ -6,27 +6,67 @@ zone "Money4US.pt" in{
 };
 
 zone "Money4US.com" in{
- type master; 
+ type slave; 
  file "/etc/bind/db.Money4US.com"; 
 };
 
 
 /etc/bind/db.Money4US.pt
 
-/etc/bind/db.Money4US.com
-
 $TTL 604800
-$ORIGIN Money4US.com.
-@ IN SOA ns1.Money4US.com. adm.Money4US.com. (
-                            2 ; Serial
-                            604800 ; Refresh
-                            86400 ; Retry
-                            2419200 ; Expire
-                            604800 ) ; Negative Cache TTL
-IN NS ns1.Money4US.com.
-IN A 10.1.0.254
-v1sw1 IN A 10.1.1.1
-@ IN MX 10 server1
-ns1 IN A 10.1.0.254
-server1 IN A 10.1.0.254
-server2 IN CNAME server1
+$ORIGIN Money4US.pt.
+@ IN SOA ns1.Money4US.pt. adm.Money4US.pt. (
+        2               ; Serial
+        604800          ; Refresh
+        86400           ; Retry
+        2419200         ; Expire
+        604800 )        ; Negative Cache TTL
+
+        
+        IN  NS      ns1.Money4US.pt.
+        IN  A       10.1.0.254
+
+v1d1    IN  A       10.1.1.1
+v1d1    IN  AAAA    3400:20:20:1100::1
+v1d2    IN  A       10.1.1.2
+v1d2    IN  AAAA    3400:20:20:1100::2
+v1d3    IN  A       10.1.1.3
+v1d3    IN  AAAA    3400:20:20:1100::3
+v1d4    IN  A       10.1.1.4
+v1d4    IN  AAAA    3400:20:20:1100::4
+
+v1c1    IN  A       10.1.1.5
+v1c1    IN  AAAA    3400:20:20:1100::5
+v1c2    IN  A       10.1.1.6
+v1c2    IN  AAAA    3400:20:20:1100::6
+
+@       IN  A        10.1.0.254
+www     IN  A        10.1.0.254
+ns1     IN  A        10.1.0.254
+server1 IN  A        10.1.0.254
+server2 IN  CNAME    server1
+
+
+/etc/bind/named.conf.local
+
+zone "1.1.10.in-addr.arpa" in{
+ type master;
+ file "/etc/bind/db.10.1.1.rev"; };
+
+/etc/bind/db.10.0.1.rev
+$TTL 604800
+$ORIGIN 1.1.10.in-addr.arpa.
+@ IN SOA ns1.Money4US.pt. adm.Money4US.pt. (
+    2           ; Serial
+    604800      ; Refresh
+    86400       ; Retry
+    2419200     ; Expire
+    604800 )    ; Negative Cache TTL
+
+        IN  NS      ns1.Money4US.pt.
+1       IN  PTR     v1d1.Money4US.pt. ; qualified name
+2       IN  PTR     v1d2.Money4US.pt.
+3       IN  PTR     v1d3.Money4US.pt. 
+4       IN  PTR     v1d4.Money4US.pt.
+5       IN  PTR     v1c1.Money4US.pt. 
+6       IN  PTR     v1c2.Money4US.pt.
